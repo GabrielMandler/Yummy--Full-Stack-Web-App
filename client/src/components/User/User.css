@@ -1,0 +1,44 @@
+.profile{
+    display: flex;
+    flex-flow: column;
+    background-color: aliceblue;
+    border-radius: 1em;
+    margin:1.5em;
+    margin-top:0;
+    width: 90%;
+}
+.Bio{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px black;
+    background-color:cadetblue;
+}
+.Title{ 
+    display: flex;
+    flex-direction: row;
+
+}
+.ProfileImage{
+    margin:0;
+    padding: 0;
+    height: 3em;
+    width: 3em;
+    align-self: center;
+    margin:0.5em;
+}
+.BioText{
+    margin:1em;
+    margin-top:0;
+}
+.Posts{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.Image{
+    height: 15em;
+    width: 15em;
+}

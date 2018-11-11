@@ -1,0 +1,71 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: rgb(255, 0, 0);
+$width:10em;
+$margin:auto;
+$margin-bottom:0.5em;
+$img-height:25em;
+$img-width:25em;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  text-align: center;
+}
+
+.form-login{
+  margin:$margin;
+  width: $width;
+  margin-bottom: $margin-bottom;
+}
+.form-email{
+  margin-bottom: $margin-bottom;
+}
+.form-password{
+  margin-bottom: $margin-bottom;
+}
+.form-submitBtn{
+  margin: $margin;
+  width: $width;
+  margin-bottom: $margin-bottom;
+}
+.nav{
+  width:20em;
+  margin: $margin;
+  margin-bottom:1em;
+}
+.feed{
+  margin-top:2em;
+  background-color: brown;
+  width: 50em;
+  margin: auto;
+  padding-top: 1em;
+}
+
+.feed-box{
+  background-color: aliceblue;
+  box-shadow: 10em black;
+  width:37em;
+  margin:$margin;
+  margin-top: $margin-bottom;
+  border: solid 0.2em $primary-color;
+}
+.feed-box-like-button{
+  margin-top: 2em;
+}
+.feed-box-title{
+  margin-top: 0.5m;
+}
+.feed-box-likes{
+  margin-top: 1em;
+}
+.feed-box-description{
+  margin-top: 1em;
+}
+.feed-box-img{
+  margin-top: 1em;
+  height:$img-height;
+  width:$img-width;
+}
+.feed-like-button{
+  margin-top: 1em;
+}

@@ -1,0 +1,15 @@
+{
+  "test": {
+    "PORT": 5000,
+    "MONGODB_URI": "mongodb://localhost:27017",
+    "JWT_SECRET": "poijasdf98435jpgfdpoij3"
+  },
+  "development": {
+    "PORT": 5000,
+    "MONGODB_URI": "mongodb://gabriel:rchbjni123@ds145463.mlab.com:45463/web-project",
+    "JWT_SECRET": "pojiaj234oi234oij234oij4",
+    "TOKEN_EXPIRES_IN": "6000",
+    "STORAGE_DIRECTORY": "C:/Users/gabriel/Documents/webProject/v1/client/src/assets",
+    "NUMBER_OF_POST_TO_FETCH": 6
+  }
+}

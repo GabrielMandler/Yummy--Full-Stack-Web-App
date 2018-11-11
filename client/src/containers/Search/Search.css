@@ -1,0 +1,13 @@
+.SearchBar{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row
+}
+.Bar{
+    margin-top:1em;
+    background-color: #703B09;
+    width:60em;
+    height:3em;
+    border-radius: 2em;
+    align-content: center;
+}
