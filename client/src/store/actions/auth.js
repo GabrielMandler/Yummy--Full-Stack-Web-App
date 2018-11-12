@@ -45,7 +45,6 @@ export const checkAuthTimeout = (expirationTime) => {
 export const auth = (authData, isSignup) =>{
     return dispatch => {
         dispatch(authStart());
-
         let url = 'api/auth/register';
         if(!parseInt(isSignup, 10)){
             url = 'api/auth/login';

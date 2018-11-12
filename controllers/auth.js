@@ -12,6 +12,8 @@ exports.login = (req, res) => {
             res.header({'token': token,'expiresin': process.env.TOKEN_EXPIRES_IN}).send(user);
           })
         }).catch( err =>{
+          console.log(err)
+
           res.status(400).send(err);
       })
   
