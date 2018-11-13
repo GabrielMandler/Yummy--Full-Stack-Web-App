@@ -1,10 +1,6 @@
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGOLAB_URI, { 
-    uri_decode_auth: true 
-    }, function(err, db) {
-
-    });
+mongoose.connect(process.env.MONGOLAB_URI, { useMongoClient: true } )
 
 module.exports = {mongoose};
