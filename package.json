@@ -10,7 +10,7 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently  \"nodemon\"  \"npm start --prefix ./client\" ",
-    "deploy": "now --public"
+    "install": "cd client && npm install && npm run build && cd .."
   },
   "author": "",
   "license": "ISC",
