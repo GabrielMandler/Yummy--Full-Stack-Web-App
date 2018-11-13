@@ -38,7 +38,7 @@ class NewPost extends Component{
             }
         },
         previewProfileImage:{
-            src: 'C:/Users/gabriel/Documents/webProject/frontend/src/assets/images/burger-logo.png',
+            src: 'client/build/static/media/burger-logo.png',
             alt: "previewProfileImage"
         } ,
         formIsValid: false,
