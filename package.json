@@ -14,7 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/datastore": "^2.0.0",
+    "@google-cloud/storage": "^2.3.0",
     "bcrypt": "^3.0.2",
+    "bluebird": "^3.5.3",
     "body-parser": "1.18.3",
     "browserify": "^16.2.3",
     "concurrently": "^4.0.1",

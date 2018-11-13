@@ -15,7 +15,6 @@
   "production": {
     "JWT_SECRET": "pojiaj234oi234oij234oij4",
     "TOKEN_EXPIRES_IN": "6000",
-    "STORAGE_DIRECTORY": "C:/Users/gabriel/Documents/webProject/v1/client/src/assets",
     "NUMBER_OF_POST_TO_FETCH": 6
   }
 }

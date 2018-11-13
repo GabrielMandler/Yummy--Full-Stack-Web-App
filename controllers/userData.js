@@ -1,6 +1,8 @@
 var User = require('../models/user');
 var Post = require('../models/post');
 var fs = require('fs');
+const request = require('request');
+const path = require("path");
 
 
 var _ = require('lodash');
@@ -43,10 +45,6 @@ exports.toggleFollowUser = (req, res) => {
   
 };
 
-
-
-
-
 exports.addNewPost = (req, res) => {
   var body = _.pick(req.body, ['title', 'description', 'userId']);
   var postId = req.locals;
@@ -71,6 +69,11 @@ exports.addNewPost = (req, res) => {
   
 exports.editProfile = (req, res) => {
   var body = _.pick(req.body, ['bio', 'username', 'userId', 'gender', 'isEditAfterRegistration']);
+
+
+  // const file = bucket.file('burger.png');
+  // const writeStream = file.createWriteStream();
+  // request(path.resolve(__dirname, "client", "build", "static", "media", "burger-logo.b8503d26.png")).pipe(writeStream);
 
   User.editProfile(body).then( (user) => {
     return res.send(user);
