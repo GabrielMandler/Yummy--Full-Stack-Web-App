@@ -9,8 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently  \"nodemon\"  \"npm start --prefix ./client\" ",
-    "install": "cd client && npm install && npm run build && cd .."
+    "dev": "concurrently  \"nodemon\"  \"npm start --prefix ./client\" "
   },
   "author": "",
   "license": "ISC",
