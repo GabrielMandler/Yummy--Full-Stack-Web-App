@@ -48,7 +48,8 @@ exports.toggleFollowUser = (req, res) => {
 exports.addNewPost = (req, res) => {
   var body = _.pick(req.body, ['title', 'description', 'userId']);
   var postId = req.locals;
-
+  var postImageDir = req.file.cloudStoragePublicUrl;
+  
       User.findById(body.userId)
           .then((user) => {
             let username = user.username;
@@ -70,10 +71,7 @@ exports.addNewPost = (req, res) => {
 exports.editProfile = (req, res) => {
   var body = _.pick(req.body, ['bio', 'username', 'userId', 'gender', 'isEditAfterRegistration']);
 
-
-  // const file = bucket.file('burger.png');
-  // const writeStream = file.createWriteStream();
-  // request(path.resolve(__dirname, "client", "build", "static", "media", "burger-logo.b8503d26.png")).pipe(writeStream);
+  body.imageDir = req.file.cloudStoragePublicUrl;
 
   User.editProfile(body).then( (user) => {
     return res.send(user);

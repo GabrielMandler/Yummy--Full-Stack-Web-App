@@ -21,7 +21,7 @@ const m = multer({
     }
   });
 
-router.post('/addNewPost', authenticate, Post.createNewPostId, m.single("file"), UserData.addNewPost);
+router.post('/addNewPost', authenticate, Post.createNewPostId, m.single("postImage"), imageUpload.uploadToGcs, UserData.addNewPost);
 
 router.post('/editProfile', authenticate, m.single("profileImage"), imageUpload.uploadToGcs, UserData.editProfile);
 

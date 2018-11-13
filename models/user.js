@@ -116,8 +116,6 @@ UserSchema.statics.editProfile = function(newUserData){
   if(gender === null || gender === "undefined"){
     User.findOne({_id: newUserData.userId})
         .then( (user) => {
-
-
             gender = user.gender
         })
   }
@@ -126,7 +124,7 @@ UserSchema.statics.editProfile = function(newUserData){
     username: newUserData.username,
     bio: newUserData.bio,
     gender: gender,
-    profileImage: process.env.STORAGE_DIRECTORY + newUserData.userId + '/profileImage/' + newUserData.userId + '.jpg',
+    profileImage: newUserData.imageDir,
     completedRegistration: true
   })
     

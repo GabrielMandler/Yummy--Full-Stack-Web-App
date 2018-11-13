@@ -1,18 +1,3 @@
-// const {Storage} = require('@google-cloud/storage');
-// const fs = require('fs');
-
-// var storage = new Storage({
-//     projectId: 'webproject-cd3b2'
-// });
-
-// var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com'
-
-// // Reference an existing bucket.
-// var bucket = storage.bucket(BUCKET_NAME);
-
-
-// module.exports = imageUpload;
-
 'use strict';
 const {Storage} = require('@google-cloud/storage');
 const fs = require('fs');
