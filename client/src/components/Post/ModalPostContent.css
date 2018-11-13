@@ -1,22 +1,4 @@
-.post{
-    display: flex;
-    flex-direction: column;
-    background-color: aliceblue;
-    box-shadow: 2px 2px #888888;
-    border-radius: 20px;
-    width:85%;
-    height: 20em;
-    height: 34em;
-    margin-bottom:2em;
-    padding:1em;
-    padding-top:0;
-  }
-
-  .title{
-    align-self: center;
-  }
-
-  .img{
+.img{
     margin-top: 1em;
     align-self: center;
     width: 10px;
@@ -34,9 +16,6 @@
       border:0;
       box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
-  }
-
-  .likes .numberOfLikes{
   }
   
   .description{
