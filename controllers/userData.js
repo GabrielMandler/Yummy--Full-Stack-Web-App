@@ -1,8 +1,5 @@
 var User = require('../models/user');
 var Post = require('../models/post');
-var fs = require('fs');
-const request = require('request');
-const path = require("path");
 
 
 var _ = require('lodash');
@@ -49,7 +46,7 @@ exports.addNewPost = (req, res) => {
   var body = _.pick(req.body, ['title', 'description', 'userId']);
   var postId = req.locals;
   var postImageDir = req.file.cloudStoragePublicUrl;
-  
+
       User.findById(body.userId)
           .then((user) => {
             let username = user.username;
