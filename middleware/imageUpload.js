@@ -27,7 +27,7 @@ var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com'
 var bucket = storage.bucket(BUCKET_NAME);
 
 function getPublicUrl(filename) {
-  return 'https://storage.googleapis.com/' + bucketName + '/' + filename;
+  return 'https://storage.googleapis.com/' + BUCKET_NAME + '/' + filename;
 }
 
 let ImageUpload = {};
