@@ -65,6 +65,7 @@ class Search extends Component{
         }
         return (
             <Aux> 
+                <h1> Search for new friends! </h1>
                 <form>
                     <Input 
                         elementType={this.state.searchForm.elementType} 
