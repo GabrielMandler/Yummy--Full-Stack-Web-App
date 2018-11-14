@@ -16,7 +16,7 @@
     height:5%;
   }
   .imageDiv{
-    height: 60%;
+    height: 50%;
   }
 
   div img{
@@ -27,7 +27,7 @@
     align-self: center;
   }
   .footer{
-    height: 15%; 
+    height: 10%; 
     margin-top: 5em;
   }
   .likes{
