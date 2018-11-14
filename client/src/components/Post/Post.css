@@ -19,6 +19,7 @@
     height: 80%;
   }
   .img{
+    width: 100%;
     margin-top: 1em;
     align-self: center;
   }
