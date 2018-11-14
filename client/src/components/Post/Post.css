@@ -3,7 +3,6 @@
     flex-direction: column;
     background-color: aliceblue;
     width:85%;
-    height: 20em;
     height: 34em;
     margin-bottom:2em;
     padding:1em;
@@ -13,6 +12,7 @@
   .title{
     align-self: center;
     height:5%;
+    width: 97%;
   }
   .imageDiv{
     height: 50%;

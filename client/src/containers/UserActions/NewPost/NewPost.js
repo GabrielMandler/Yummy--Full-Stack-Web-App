@@ -8,6 +8,8 @@ import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import {checkValidity} from '../../../shared/utilities';
 
+import classes from './NewPost.css';
+
 import * as actions from '../../../store/actions/index';
 
 class NewPost extends Component{
@@ -38,7 +40,7 @@ class NewPost extends Component{
             }
         },
         previewProfileImage:{
-            src: 'client/build/static/media/burger-logo.png',
+            src: 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/Untitled.png',
             alt: "previewProfileImage"
         } ,
         formIsValid: false,
@@ -98,7 +100,7 @@ class NewPost extends Component{
     render(){ 
         let profileImage = null;
         if(this.state.previewProfileImage !== null){
-            profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} /> )
+            profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} className={classes.previewProfileImage} /> )
         }
         
         const formElementsArray = [];

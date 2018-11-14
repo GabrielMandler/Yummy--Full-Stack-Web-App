@@ -8,6 +8,8 @@ import Button from '../../../components/UI/Button/Button';
 import {checkValidity} from '../../../shared/utilities';
 import * as actions from '../../../store/actions/index';
 
+import classes from './EditProfile.css';
+
 class EditProfile extends Component{
     state = {
         controls: {
@@ -61,7 +63,7 @@ class EditProfile extends Component{
             }
         },
         previewProfileImage:{
-            src: 'client/build/static/media/burger-logo.png',
+            src: 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/kisspng-user-computer-icons-system-chinese-wind-title-column-5af1427fd3ab48.378455571525760639867.png',
             alt: "previewProfileImage"
         } ,
         formIsValid: false,
@@ -151,7 +153,7 @@ class EditProfile extends Component{
 
     render(){  
         
-        let profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} /> )
+        let profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} className={classes.profileImage} /> )
 
         const formElementsArray = [];
         for(let key in this.state.controls){

@@ -10,7 +10,13 @@ const PostComponent = (props) => {
     return (
         <Aux>
             <div className={classes.post} key={props.index}>
-                <Link to={props.userLink + props.postUserId}><div className={classes.title}><h3>{props.postUsername}</h3></div></Link>
+                <Link to={props.userLink + props.postUserId}>
+                    <div className={classes.title}>
+                        <h3>
+                            {props.postUsername}
+                        </h3>
+                    </div>
+                </Link>
                 <div className={classes.imageDiv}>
                     <img className={classes.image} src={props.postImage} alt={props.postAlt} />
                 </div>

@@ -31,7 +31,7 @@ class Search extends Component{
             text: "Search!"
         },
         defaultSearchImage: {
-            src: "",
+            src: 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/27825.png',
             alt: "defaultSearchImage"
         }
     }
