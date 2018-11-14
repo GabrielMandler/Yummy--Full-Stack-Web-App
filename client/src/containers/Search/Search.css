@@ -6,8 +6,11 @@
 .Bar{
     margin-top:1em;
     background-color: #703B09;
-    width:60em;
+    width:80em;
     height:3em;
     border-radius: 2em;
     align-content: center;
+}
+h1{
+    color:white;
 }

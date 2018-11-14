@@ -18,7 +18,7 @@ class Search extends Component{
                     type: 'text',
                     placeholder: 'enter user name'
                 },
-                value: '',
+                value: 'enter user name',
                 validation: {
                     required: true
                 },
