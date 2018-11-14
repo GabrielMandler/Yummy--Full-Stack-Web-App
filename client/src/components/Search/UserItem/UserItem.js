@@ -8,9 +8,9 @@ const UserItem = (props) => {
 
     return (
         <Link to= {usersLink}>
-            <li>
-                <img src={props.image} className={classes.img} /> 
-                <h3> {props.name} </h3>
+            <li className={classes.userItem} >
+                <img src={props.image} />
+                <p> {props.name} </p>
             </li>
         </Link>
     )

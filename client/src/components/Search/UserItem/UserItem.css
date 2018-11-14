@@ -1,4 +1,20 @@
+.userItem{
+  display: flex;
+  width: 80%;
+  padding: 1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  background-color: white;
+  border-radius: 5px 5px;
+  align-self: center;
+}
+
 li img{
-  height: 2px;
-  width: 2px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px 50px ;
+}
+.userItem p{
+  color:black;
+  margin-left: 1em;
 }

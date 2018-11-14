@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import Spinner from '../../components/UI/Spinner/Spinner';
 import Input from '../../components/UI/Input/Input';
-import UserItem from './UserItem/UserItem';
+import UserItem from '../../components/Search/UserItem/UserItem';
 
 import classes from './Search.css';
 
@@ -45,7 +45,7 @@ class Search extends Component{
 
         if(!this.props.isInputSearchEmpty){
             usersList = (
-            <ul>
+            <ul className={classes.usersList} >
                 {this.props.usersList.map( (user, index) => {
                     return <UserItem key={index} id={user._id} name={user.username} image={user.profileImage} />
                 })}

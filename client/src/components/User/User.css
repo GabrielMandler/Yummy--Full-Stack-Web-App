@@ -7,6 +7,9 @@
     margin-top:0;
     width: 90%;
 }
+h1{
+    color:black;
+}
 .Bio{
     display: flex;
     flex-direction: column;
@@ -22,10 +25,12 @@
 .ProfileImage{
     margin:0;
     padding: 0;
-    height: 3em;
-    width: 3em;
+    height: 4em;
+    width: 4em;
     align-self: center;
     margin:0.5em;
+    border-radius: 30px 30px;
+    border: solid 1px black;
 }
 .BioText{
     margin:1em;
