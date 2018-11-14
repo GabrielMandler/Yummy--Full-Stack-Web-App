@@ -13,6 +13,7 @@
 
   .title{
     align-self: center;
+    height:5%;
   }
 
   .img{
@@ -22,7 +23,8 @@
     height: 80%;
   }
   .footer{
-      margin-top: 5em;
+    height: 15%; 
+    margin-top: 5em;
   }
   .likes{
   }
