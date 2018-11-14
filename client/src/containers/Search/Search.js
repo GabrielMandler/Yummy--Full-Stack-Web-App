@@ -47,7 +47,7 @@ class Search extends Component{
             usersList = (
             <ul>
                 {this.props.usersList.map( (user, index) => {
-                    return <UserItem key={index} id={user._id} name={user.username} image={user.image} />
+                    return <UserItem key={index} id={user._id} name={user.username} image={user.profileImage} />
                 })}
             </ul>
             )
