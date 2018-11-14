@@ -11,7 +11,9 @@ const PostComponent = (props) => {
         <Aux>
             <div className={classes.post} key={props.index}>
                 <Link to={props.userLink + props.postUserId}><div className={classes.title}><h3>{props.postUsername}</h3></div></Link>
+                <div className={classes.imageDiv}>
                     <img className={classes.img} src={props.postImage} alt={props.postAlt} />
+                </div>
                 <div className={classes.footer}>
                     <div className={classes.likes}>
                         <Button btnType={props.btnType} clicked={props.clicked}>{props.likeButtonText}</Button>

@@ -15,12 +15,12 @@
     align-self: center;
     height:5%;
   }
-
+  .imageDiv{
+    height: 80%;
+  }
   .img{
     margin-top: 1em;
     align-self: center;
-    width: 80%;
-    height: 80%;
   }
   .footer{
     height: 15%; 
