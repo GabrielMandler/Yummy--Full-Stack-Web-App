@@ -18,7 +18,9 @@
   .imageDiv{
     height: 60%;
   }
-  .img{
+
+  div img{
+    display: block;
     width: 100%;
     margin-top: 1em;
     align-self: center;
