@@ -6,6 +6,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import Input from '../../components/UI/Input/Input';
 import UserItem from './UserItem/UserItem';
 
+import classes from './Search.css';
 
 import * as actions from '../../store/actions/index';
 
