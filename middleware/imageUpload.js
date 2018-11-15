@@ -35,15 +35,12 @@ let createFolders = (folderName) => {
 
 let folderExist = (folderName) => {
   var folder = bucket.file(folderName);
-  return new Promise( (resolve, reject) => {
-    folder.exists()
-          .then(()=>{ 
-            return 1;
-          });
-    console.log("return 0");
-    return 0;
-  });
-
+  folder.exists()
+        .then(()=>{ 
+          return 1;
+        });
+  console.log("return 0");
+  return 0;
 }
 
 let ImageUpload = {};
