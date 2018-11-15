@@ -55,7 +55,7 @@ ImageUpload.uploadToGcs = (req, res, next) => {
     .then((doesExist) => {
       if(!doesExist){
         folderName = userId + FOLDER_SUFFIX;
-        createFolders(folderName)
+        createFolders(FOLDER_SUFFIX)
         .then(() => {
           next()
         })
