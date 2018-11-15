@@ -49,7 +49,7 @@ ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let username = req.username;
 
-  folderExist(username)
+  folderExist("bitx")
     .then((doesExist) => {
       if(!doesExist){
         folderName = FOLDER_PREFIX + username;
