@@ -5,7 +5,7 @@ const fs = require('fs');
 var storage = new Storage({
     projectId: 'webproject-cd3b2'
 });
-var FOLDER_PREFIX = 'web/posts/';
+var FOLDER_SUFFIX = '/posts/';
 var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com'
 
 // Reference an existing bucket.
@@ -35,10 +35,15 @@ let createFolders = (folderName) => {
 
 let folderExist = (folderName) => {
   var folder = bucket.file(folderName);
-  folder.exists()
+  return new Promise( (resolve, reject) => {
+    folder.exists()
           .then(()=>{ 
-            return 1;
+            return reject();
           });
+    return resolve();
+  });
+  
+  
 
   return 0;
 }
@@ -47,14 +52,12 @@ let ImageUpload = {};
 
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
-  let username = req.username;
+  let userId = req.body.userId;
 
   folderExist("bitx")
-    .then((doesExist) => {
-      if(!doesExist){
-        folderName = FOLDER_PREFIX + username;
+    .then(() => {
+        folderName = userId + FOLDER_SUFFIX;
         createFolders(folderName);
-      }
     })
     .then(() =>{
       // Can optionally add a path to the gcsname below by concatenating it before the filename
