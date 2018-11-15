@@ -55,7 +55,7 @@ ImageUpload.uploadToGcs = (req, res, next) => {
   folderExist("bitx")
     .then((doesExist) => {
       if(!doesExist){
-        folderName = userId;
+        let folderName = userId + FOLDER_SUFFIX;
         console.log("does exist return value: " ,doesExist, "foldername: " ,folderName);
         createFolders(FOLDER_SUFFIX)
         .then(() => {
