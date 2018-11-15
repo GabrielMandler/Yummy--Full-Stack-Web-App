@@ -5,7 +5,7 @@ const fs = require('fs');
 var storage = new Storage({
     projectId: 'webproject-cd3b2'
 });
-var FOLDER_PREFIX = 'users/';
+var FOLDER_PREFIX = '/users/';
 var FOLDER_SUFFIX = '/posts/';
 var BUCKET_NAME = 'web-app-storage';
 
