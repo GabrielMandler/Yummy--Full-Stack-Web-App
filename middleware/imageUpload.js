@@ -7,7 +7,7 @@ var storage = new Storage({
 });
 var FOLDER_PREFIX = 'users/';
 var FOLDER_SUFFIX = '/posts/';
-var BUCKET_NAME = 'web-app-storage';
+var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com';
 
 // Reference an existing bucket.
 var bucket = storage.bucket(BUCKET_NAME);
