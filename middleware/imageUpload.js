@@ -20,6 +20,15 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
 
+
+  var file = bucket.file('gcloud-issue-1570-subfolder-first/');
+  file.createWriteStream({resumable: false})
+  .on('error', callback)
+  .on('finish', callback)
+  .end('');
+
+
+
   // Can optionally add a path to the gcsname below by concatenating it before the filename
   const gcsname = req.file.originalname;
   const file = bucket.file(gcsname);
