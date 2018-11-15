@@ -15,7 +15,7 @@ function getPublicUrl(filename) {
   return 'https://storage.cloud.google.com/' + BUCKET_NAME + '/' + filename;
 }
 
-let createFolders = (folderName) => {
+let createFolders = (req, res, next, folderName) => {
   var folder = bucket.file(folderName);
   const stream = folder.createWriteStream({
     metadata: {
