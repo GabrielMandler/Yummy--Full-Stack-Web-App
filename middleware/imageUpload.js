@@ -21,13 +21,21 @@ ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
 
 
-  var file = bucket.file('gcloud-issue-1570-subfolder-first/');
-  file.createWriteStream({resumable: false})
-  .on('error', callback)
-  .on('finish', callback)
-  .end('');
+  var folder = bucket.file('gcloud-issue-1570-subfolder-first/');
+  const stream2 = folder.createWriteStream({
+    metadata: {
+      contentType: req.file.mimetype
+    }
+  });
+  stream2.on('error', (err) => {
+    next(err);
+  });
 
+  stream2.on('finish', () => {
+    next();
+  });
 
+  stream2.end();
 
   // Can optionally add a path to the gcsname below by concatenating it before the filename
   const gcsname = req.file.originalname;
