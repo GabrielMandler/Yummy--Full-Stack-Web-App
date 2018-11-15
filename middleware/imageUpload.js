@@ -34,7 +34,7 @@ let createFolders = (folderName) => {
 }
 
 let folderExist = (folderName) => {
-  var folder = myBucket.file(folderName);
+  var folder = bucket.file(folderName);
   folder.exists()
           .then(()=>{ 
             return 1;
