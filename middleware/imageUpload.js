@@ -15,7 +15,7 @@ function getPublicUrl(filename) {
   return 'https://storage.cloud.google.com/' + BUCKET_NAME + '/' + filename;
 }
 
-let createFolders = (req, res, next, folderName) => {
+let createFolders = (req, folderName) => {
   var folder = bucket.file(folderName);
   const stream = folder.createWriteStream({
     metadata: {
@@ -57,7 +57,7 @@ ImageUpload.uploadToGcs = (req, res, next) => {
       if(!doesExist){
         let folderName = userId + FOLDER_SUFFIX;
         console.log("does exist return value: " ,doesExist, "foldername: " ,folderName);
-        createFolders(FOLDER_SUFFIX)
+        createFolders(req, folderName)
         .then(() => {
           console.log("got here");
           next()
