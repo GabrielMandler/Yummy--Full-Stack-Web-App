@@ -40,6 +40,7 @@ let folderExist = (folderName) => {
           .then(()=>{ 
             return 1;
           });
+    console.log("return 0");
     return 0;
   });
 
@@ -50,20 +51,24 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
-
+  console.log("userid is: " userId);
   folderExist("bitx")
     .then((doesExist) => {
       if(!doesExist){
         folderName = userId + FOLDER_SUFFIX;
+        console.log("does exist return value: " ,doesExist, "foldername: " ,folderName);
         createFolders(FOLDER_SUFFIX)
         .then(() => {
+          console.log("got here");
           next()
         })
       }else{
+        console.log("got here2");
         next()
       }
     })
     .then(() =>{
+      console.log("let start!");
       // Can optionally add a path to the gcsname below by concatenating it before the filename
       const gcsname = req.file.originalname;
       const file = bucket.file(gcsname);
