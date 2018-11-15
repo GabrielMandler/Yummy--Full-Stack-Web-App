@@ -33,7 +33,8 @@ let createFolders = (folderName) => {
   stream.end();
 }
 
-let folderExist = (folder) => {
+let folderExist = (folderName) => {
+  var folder = myBucket.file(folderName);
   folder.exists()
           .then(()=>{ 
             return 1;
