@@ -20,7 +20,11 @@ let createFolders = (req, folderName) => {
   console.log("folderName: ", folderName);
   var folder = bucket.file(folderName);
   return new Promise( (resolve, reject) => {
-    const stream = folder.createWriteStream();
+    const stream = folder.createWriteStream({
+      metadata: {
+        contentType: req.file.mimetype
+      }
+    });
     stream.on('error', (err) => {
       next(err);
     });
