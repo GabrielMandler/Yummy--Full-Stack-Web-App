@@ -38,10 +38,10 @@ let folderExist = (folderName) => {
   return new Promise( (resolve, reject) => {
     folder.exists()
           .then(()=>{ 
-            resolve(1);
+            return resolve(1);
           });
     console.log("return 0");
-    resolve(0);
+    return resolve(0);
   });
 
 }
