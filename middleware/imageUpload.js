@@ -17,20 +17,24 @@ function getPublicUrl(filename) {
 
 let createFolders = (req, folderName) => {
   var folder = bucket.file(folderName);
-  const stream = folder.createWriteStream({
-    metadata: {
-      contentType: req.file.mimetype
-    }
-  });
-  stream.on('error', (err) => {
-    next(err);
-  });
+  return new Promise( (resolve, reject) => {
+    const stream = folder.createWriteStream({
+      metadata: {
+        contentType: req.file.mimetype
+      }
+    });
+    stream.on('error', (err) => {
+      next(err);
+    });
 
-  stream.on('finish', () => {
-    next();
-  });
+    stream.on('finish', () => {
+      next();
+    });
 
-  return stream.end();
+    stream.end();
+    
+    return resolve();
+  });
 }
 
 let folderExist = (folderName) => {
