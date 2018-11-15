@@ -51,8 +51,8 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
-  let folderName = userId + '/';
-  let folderName2 = '123/';
+  let folderName = "posts/";
+  let folderName2 = userId + "/";
   console.log("userid is: " + userId);
   folderExist(FOLDER_PREFIX + userId)
     .then((doesExist) => {
