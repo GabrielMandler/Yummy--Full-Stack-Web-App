@@ -30,7 +30,7 @@ let createFolders = (folderName) => {
     next();
   });
 
-  stream.end();
+  return stream.end();
 }
 
 let folderExist = (folderName) => {
@@ -38,14 +38,11 @@ let folderExist = (folderName) => {
   return new Promise( (resolve, reject) => {
     folder.exists()
           .then(()=>{ 
-            return reject();
+            return 1;
           });
-    return resolve();
+    return 0;
   });
-  
-  
 
-  return 0;
 }
 
 let ImageUpload = {};
@@ -55,9 +52,16 @@ ImageUpload.uploadToGcs = (req, res, next) => {
   let userId = req.body.userId;
 
   folderExist("bitx")
-    .then(() => {
+    .then((doesExist) => {
+      if(!doesExist){
         folderName = userId + FOLDER_SUFFIX;
-        createFolders(folderName);
+        createFolders(folderName)
+        .then(() => {
+          next()
+        })
+      }else{
+        next()
+      }
     })
     .then(() =>{
       // Can optionally add a path to the gcsname below by concatenating it before the filename
