@@ -5,8 +5,9 @@ const fs = require('fs');
 var storage = new Storage({
     projectId: 'webproject-cd3b2'
 });
+var FOLDER_PREFIX = 'users/';
 var FOLDER_SUFFIX = '/posts/';
-var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com'
+var BUCKET_NAME = 'web-app-storage';
 
 // Reference an existing bucket.
 var bucket = storage.bucket(BUCKET_NAME);
@@ -28,12 +29,10 @@ let createFolders = (req, folderName) => {
     });
 
     stream.on('finish', () => {
-      next();
+      stream.end();
+      return resolve();
     });
 
-    stream.end();
-    
-    return resolve();
   });
 }
 
@@ -55,11 +54,11 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
+  let folderName = FOLDER_PREFIX + userId + FOLDER_SUFFIX;
   console.log("userid is: " + userId);
-  folderExist("bitx")
+  folderExist(FOLDER_PREFIX + userId)
     .then((doesExist) => {
       if(!doesExist){
-        let folderName = userId + FOLDER_SUFFIX;
         console.log("does exist return value: " ,doesExist, "foldername: " ,folderName);
         createFolders(req, folderName)
         .then(() => {
@@ -75,6 +74,7 @@ ImageUpload.uploadToGcs = (req, res, next) => {
       console.log("let start!");
       // Can optionally add a path to the gcsname below by concatenating it before the filename
       const gcsname = req.file.originalname;
+      let fileDir = folderName + gcsname;
       const file = bucket.file(gcsname);
 
       const stream = file.createWriteStream({
