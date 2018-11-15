@@ -51,7 +51,7 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
-  console.log("userid is: " userId);
+  console.log("userid is: " + userId);
   folderExist("bitx")
     .then((doesExist) => {
       if(!doesExist){
