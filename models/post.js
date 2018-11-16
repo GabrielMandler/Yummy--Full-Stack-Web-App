@@ -58,7 +58,6 @@ PostSchema.statics.addNewPost = (id, data, username, profileImage, postImage) =>
               post.user.profileImage = profileImage;
               
               post.save();
-              console.log("Hey")
               return Promise.resolve();
             });
 }

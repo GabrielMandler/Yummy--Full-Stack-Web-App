@@ -53,7 +53,10 @@ exports.addNewPost = (req, res) => {
             
             Post.addNewPost(postId, body, username, profileImage, postImageDir)
                 .then( () => {
-                  return User.status(200).addNewPostToUser(body.userId, postId);
+                  User.addNewPostToUser(body.userId, postId);
+                })
+                .then((post) => {
+                  res.status(200).send(post);
                 })
                 .catch( (err) => {
                   console.log(err)
