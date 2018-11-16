@@ -15,7 +15,7 @@ exports.login = (req, res) => {
         })
         .catch( (err) => {
           console.log("hey you ", err)
-          return res.send(err);
+          return res.status(err.status).send(err.Error);
       })
   
   };
