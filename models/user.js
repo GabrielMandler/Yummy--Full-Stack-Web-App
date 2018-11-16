@@ -198,8 +198,7 @@ UserSchema.statics.findByCredentials = function (email, password) {
                 if (!user) {
                   var err = new Error('User not found.');
                   err.status = 401;
-                  Promise.reject(err);
-                  next(err);
+                  return Promise.reject(err);
                 }
                 
                 return new Promise( (resolve, reject) => {
