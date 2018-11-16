@@ -6,14 +6,15 @@ exports.login = (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
     
     //authenticate input against database
-    User.findByCredentials(body.email, body.password).then(user => {
-        return user.generateAuthToken()
+    User.findByCredentials(body.email, body.password)
+        .then(user => {
+          return user.generateAuthToken()
         .then( (token) => {
             res.status(200).header({'token': token,'expiresin': process.env.TOKEN_EXPIRES_IN}).send(user);
           })
         }).catch( (err) =>{
           console.log(err);
-          res.status(400).json(err);
+          res.send(err);
       })
   
   };
