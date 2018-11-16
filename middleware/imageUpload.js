@@ -17,7 +17,6 @@ function getPublicUrl(userId, filename) {
 }
 
 let createFolders = (req, folderName) => {
-  console.log("folderName: ", folderName);
   var folder = bucket.file(folderName);
   return new Promise( (resolve, reject) => {
     const stream = folder.createWriteStream({
@@ -55,7 +54,9 @@ ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
   let folderName = FOLDER_PREFIX + userId + FOLDER_SUFFIX;
-  folderExist(FOLDER_PREFIX + userId + '/')
+  let userFolder = FOLDER_PREFIX + userId + '/';
+  
+  folderExist(userFolder)
     .then((doesExist) => {
       if(!doesExist){
         createFolders(req, folderName)

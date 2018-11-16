@@ -10,9 +10,9 @@ exports.getUserData = (req, res) => {
   User.getUserData(userId)
       .then( (user) => {
         
-        return res.send(user);
+        return res.status(200).send(user);
       }).catch( err => {
-        return res.send(err);
+        return res.status(400).send(err);
       }) 
 };
 
@@ -21,9 +21,9 @@ exports.getUserPosts = (req, res) => {
 
   User.getUserPosts(body.userId, body.numberOfPostFetched)
       .then( (data) => {
-        return res.send(data);
+        return res.status(200).send(data);
       }).catch( err => {
-        return res.send(err);
+        return res.status(400).send(err);
       }) 
 };
 
@@ -36,8 +36,7 @@ exports.toggleFollowUser = (req, res) => {
         res.status(200).send(user);
       })
       .catch( (err) => {
-        
-        res.send(err);
+        res.status(400).send(err);
       })
   
 };
@@ -53,14 +52,11 @@ exports.addNewPost = (req, res) => {
             let profileImage = user.profileImage;
             
             Post.addNewPost(postId, body, username, profileImage, postImageDir)
-                .then( (post) => {
-                  res.status(200).send(post);
-                })
                 .then( () => {
-                  return User.addNewPostToUser(body.userId, postId);
+                  return User.status(200).addNewPostToUser(body.userId, postId);
                 })
                 .catch( (err) => {
-                  res.send(err);
+                  res.status(400).send(err);
                 })
         })
 };
@@ -71,9 +67,9 @@ exports.editProfile = (req, res) => {
   body.imageDir = req.file.cloudStoragePublicUrl;
 
   User.editProfile(body).then( (user) => {
-    return res.send(user);
+    return res.status(200).send(user);
   }).catch( err => {
-    return res.send(err);
+    return res.status(400).send(err);
   }) 
 
 };

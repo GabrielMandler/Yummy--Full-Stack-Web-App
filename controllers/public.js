@@ -8,9 +8,9 @@ exports.search = (req, res) => {
   
   User.getUsers(req.body.searchInput, req.body.userId)
           .then( (data) => {
-            return res.send(data);
+            return res.status(200).send(data);
           }).catch( err => {
-            return res.send(err);
+            return res.status(400).send(err);
           }) 
 }
 
@@ -20,9 +20,9 @@ exports.getFeedPosts = (req, res) => {
   User.findOne({_id: body.userId})
       .then( (user) => {
         Post.getPosts(user.followingArr, body.numberOfPostFetched).then( (data) => { 
-          return res.send(data);
+          return res.status(200).send(data);
         }).catch( err => {
-          return res.send(err);
+          return res.status(400).send(err);
         }) 
       });
 };
@@ -31,8 +31,8 @@ exports.toggleLike = (req, res) => {
   var body = _.pick(req.body, ['postId', 'userId']);
   
   Post.toggleLike(body).then( (post) => {
-    return res.send(post);
+    return res.status(200).send(post);
   }).catch( err => {
-    return res.send(err);
+    return res.status(400).send(err);
   }) 
 };

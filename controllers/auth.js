@@ -9,9 +9,10 @@ exports.login = (req, res) => {
     User.findByCredentials(body.email, body.password).then(user => {
         return user.generateAuthToken()
         .then( (token) => {
-            res.header({'token': token,'expiresin': process.env.TOKEN_EXPIRES_IN}).send(user);
+            res.status(200).header({'token': token,'expiresin': process.env.TOKEN_EXPIRES_IN}).send(user);
           })
-        }).catch( err =>{
+        }).catch( () =>{
+          err = "Wrong user or password!"
           res.status(400).send(err);
       })
   
@@ -24,8 +25,9 @@ exports.register = (req, res) => {
   user.save().then( () => {
     return user.generateAuthToken();
   }).then( token => {
-    res.header({'token': token,'expiresin': process.env.TOKEN_EXPIRES_IN}).send(user);
-  }).catch(err => {
+    res.status(200).header({'token': token,'expiresin': process.env.TOKEN_EXPIRES_IN}).send(user);
+  }).catch(() => {
+    err = "Error! Please try again!"
     res.status(400).send(err);
   })
 };
