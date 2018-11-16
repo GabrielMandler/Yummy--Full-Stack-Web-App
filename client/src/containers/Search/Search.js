@@ -10,6 +10,8 @@ import classes from './Search.css';
 
 import * as actions from '../../store/actions/index';
 
+import * as Resources from '../../shared/resources';
+
 class Search extends Component{
     state = {
         searchForm: {
@@ -31,7 +33,7 @@ class Search extends Component{
             text: "Search!"
         },
         defaultSearchImage: {
-            src: 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/27825.png',
+            src: Resources.users,
             alt: "defaultSearchImage"
         }
     }

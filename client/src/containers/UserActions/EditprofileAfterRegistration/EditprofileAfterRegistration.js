@@ -8,6 +8,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import Auth from '../../../components/Auth/Auth';
 import {checkValidity} from '../../../shared/utilities';
 import * as actions from '../../../store/actions/index';
+import * as Resources from '../../../shared/resources';
 
 
 class EditProfileAfterRegistration extends Component{
@@ -51,7 +52,7 @@ class EditProfileAfterRegistration extends Component{
             }
         },
         previewProfileImage:{
-            src: 'C:/Users/gabriel/Documents/webProject/frontend/src/assets/images/burger-logo.png',
+            src: Resources.user,
             alt: "previewProfileImage"
         } ,
         formIsValid: false,

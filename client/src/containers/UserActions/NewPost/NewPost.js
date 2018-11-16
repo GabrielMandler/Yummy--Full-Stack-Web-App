@@ -12,6 +12,8 @@ import classes from './NewPost.css';
 
 import * as actions from '../../../store/actions/index';
 
+import * as Resources from '../../../shared/resources';
+
 class NewPost extends Component{
     state = {
         controls: {
@@ -40,7 +42,7 @@ class NewPost extends Component{
             }
         },
         previewProfileImage:{
-            src: 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/Untitled.png',
+            src: Resources.newpost,
             alt: "previewProfileImage"
         } ,
         formIsValid: false,

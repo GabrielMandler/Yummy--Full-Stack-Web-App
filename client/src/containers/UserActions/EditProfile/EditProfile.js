@@ -8,6 +8,7 @@ import Button from '../../../components/UI/Button/Button';
 import {checkValidity} from '../../../shared/utilities';
 import * as actions from '../../../store/actions/index';
 
+import * as Resources from '../../../shared/resources';
 import classes from './EditProfile.css';
 
 class EditProfile extends Component{
@@ -63,7 +64,7 @@ class EditProfile extends Component{
             }
         },
         previewProfileImage:{
-            src: 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/kisspng-user-computer-icons-system-chinese-wind-title-column-5af1427fd3ab48.378455571525760639867.png',
+            src: Resources.user,
             alt: "previewProfileImage"
         } ,
         formIsValid: false,
@@ -154,7 +155,9 @@ class EditProfile extends Component{
     render(){  
         
         let profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} className={classes.profileImage} /> )
-
+        if(this.props.profileImage != null){
+            profileImage = ( <img src={this.props.profileImage} alt={this.state.previewProfileImage.alt} className={classes.profileImage} /> )
+        }
         const formElementsArray = [];
         for(let key in this.state.controls){
             formElementsArray.push({
