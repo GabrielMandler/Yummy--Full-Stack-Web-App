@@ -207,7 +207,9 @@ UserSchema.statics.findByCredentials = function (email, password) {
                     if (result === true) {
                       resolve(user);
                     } else {
-                      reject();
+                      var err = new Error('The password is incorrect!');
+                      err.status = 401;
+                      reject(err);
                     }
                   })
                 })

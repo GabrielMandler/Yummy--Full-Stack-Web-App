@@ -14,8 +14,7 @@ exports.login = (req, res) => {
           })
         })
         .catch( (err) => {
-          console.log("11 ", err.Error)
-          return res.status(err.status).json(err.Error);
+          return res.status(err.status).json(err);
       })
   
   };

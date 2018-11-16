@@ -6,7 +6,7 @@ var storage = new Storage({
     projectId: 'webproject-cd3b2'
 });
 var FOLDER_PREFIX = 'users/';
-var FOLDER_SUFFIX = '/posts/';
+var FOLDER_SUFFIX = 'posts/';
 var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com';
 
 // Reference an existing bucket.
@@ -53,7 +53,7 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
-  let folderName = FOLDER_PREFIX + userId + FOLDER_SUFFIX;
+  let folderName = FOLDER_PREFIX + userId + '/' + FOLDER_SUFFIX;
   let userFolder = FOLDER_PREFIX + userId + '/';
   
   folderExist(userFolder)
