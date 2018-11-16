@@ -52,9 +52,6 @@ exports.addNewPost = (req, res) => {
             let profileImage = user.profileImage;
             
             Post.addNewPost(postId, body, username, profileImage, postImageDir)
-                .then( (post) => {
-                  return post;
-                })
                 .then( () => {
                   return User.status(200).addNewPostToUser(body.userId, postId);
                 })

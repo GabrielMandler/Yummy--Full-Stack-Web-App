@@ -57,7 +57,9 @@ PostSchema.statics.addNewPost = (id, data, username, profileImage, postImage) =>
               post.user.username = username;
               post.user.profileImage = profileImage;
               
-              return post.save();
+              post.save();
+
+              return new Promise.resolve();
             });
 }
 
