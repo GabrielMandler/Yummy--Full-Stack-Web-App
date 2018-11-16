@@ -6,14 +6,13 @@ var storage = new Storage({
     projectId: 'webproject-cd3b2'
 });
 var FOLDER_PREFIX = 'users/';
-var FOLDER_SUFFIX = '/posts/';
 var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com';
 
 // Reference an existing bucket.
 var bucket = storage.bucket(BUCKET_NAME);
 
 function getPublicUrl(userId, filename) {
-  return 'https://storage.cloud.google.com/' + BUCKET_NAME + '/' + FOLDER_PREFIX + userId + FOLDER_SUFFIX + filename;
+  return 'https://storage.cloud.google.com/' + BUCKET_NAME + '/' + FOLDER_PREFIX + userId + '/' + filename;
 }
 
 let createFolders = (req, folderName) => {
@@ -53,10 +52,9 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
-  let folderName = FOLDER_PREFIX + userId + FOLDER_SUFFIX;
-  let userFolder = FOLDER_PREFIX + userId + '/';
+  let folderName = FOLDER_PREFIX + userId + '/';
   
-  folderExist(userFolder)
+  folderExist(folderName)
     .then((doesExist) => {
       if(!doesExist){
         createFolders(req, folderName)
