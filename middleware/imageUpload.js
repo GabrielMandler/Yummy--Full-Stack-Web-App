@@ -12,8 +12,8 @@ var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com';
 // Reference an existing bucket.
 var bucket = storage.bucket(BUCKET_NAME);
 
-function getPublicUrl(filename) {
-  return 'https://storage.cloud.google.com/' + BUCKET_NAME + '/' + filename;
+function getPublicUrl(userId, filename) {
+  return 'https://storage.cloud.google.com/' + BUCKET_NAME + '/' + FOLDER_PREFIX + userId + FOLDER_PREFIX + filename;
 }
 
 let createFolders = (req, folderName) => {
@@ -85,7 +85,7 @@ ImageUpload.uploadToGcs = (req, res, next) => {
 
       stream.on('finish', () => {
         req.file.cloudStorageObject = gcsname;
-        req.file.cloudStoragePublicUrl = getPublicUrl(gcsname);
+        req.file.cloudStoragePublicUrl = getPublicUrl(userId, gcsname);
         next();
       });
 
