@@ -56,6 +56,7 @@ exports.addNewPost = (req, res) => {
                   return User.status(200).addNewPostToUser(body.userId, postId);
                 })
                 .catch( (err) => {
+                  console.log(err)
                   res.status(400).send(err);
                 })
            })
