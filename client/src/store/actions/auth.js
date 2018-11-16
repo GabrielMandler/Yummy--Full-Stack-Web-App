@@ -62,8 +62,7 @@ export const auth = (authData, isSignup) =>{
                 dispatch(checkAuthTimeout(expiresIn));
             })
             .catch(err => {
-                console.log("2 ", err);
-                dispatch(authFail(err));
+                dispatch(authFail(err.message));
             });
     };
 }
