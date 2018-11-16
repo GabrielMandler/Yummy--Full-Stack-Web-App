@@ -192,26 +192,27 @@ UserSchema.statics.findByToken = function (token) {
 UserSchema.statics.findByCredentials = function (email, password) {
   var User = this;
   
-  return User.findOne({ email: email }).then( (user) => {
+  return User.findOne({ email: email })
+             .then( (user) => {
       
-      if (!user) {
-        var err = new Error('User not found.');
-        err.status = 401;
-        return Promise.reject(err);
-      }
-      
-      return new Promise( (resolve, reject) => {
-        bcrypt.compare(password, user.password, function (err, result) {
-        
-          if (result === true) {
-             resolve(user);
-          } else {
-             reject();
-          }
-        })
-      })
-      
-    });
+                if (!user) {
+                  var err = new Error('User not found.');
+                  err.status = 401;
+                  return Promise.reject(err);
+                }
+                
+                return new Promise( (resolve, reject) => {
+                  bcrypt.compare(password, user.password, function (err, result) {
+                  
+                    if (result === true) {
+                      resolve(user);
+                    } else {
+                      reject();
+                    }
+                  })
+                })
+                
+              });
 };
 UserSchema.methods.removeToken = function (token) {
 
