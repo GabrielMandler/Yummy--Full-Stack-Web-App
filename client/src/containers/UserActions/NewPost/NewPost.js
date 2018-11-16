@@ -75,8 +75,7 @@ class NewPost extends Component{
         };
         const updatedFormElement = { 
             ...updatedOrderForm[inputIdentifier]
-        };
-        
+        };  
 
         if(inputIdentifier === 'image'){
             this.previewImage(event.target.files[0]);

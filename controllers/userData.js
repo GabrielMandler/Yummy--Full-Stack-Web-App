@@ -52,13 +52,13 @@ exports.addNewPost = (req, res) => {
             let profileImage = user.profileImage;
             
             Post.addNewPost(postId, body, username, profileImage, postImageDir)
-                .then( () => {
+                .then( (post) => {
                   return User.status(200).addNewPostToUser(body.userId, postId);
                 })
                 .catch( (err) => {
                   res.status(400).send(err);
                 })
-        })
+           })
 };
   
 exports.editProfile = (req, res) => {

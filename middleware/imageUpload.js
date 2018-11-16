@@ -1,6 +1,5 @@
 'use strict';
 const {Storage} = require('@google-cloud/storage');
-const fs = require('fs');
 
 var storage = new Storage({
     projectId: 'webproject-cd3b2'
