@@ -13,7 +13,7 @@ exports.login = (req, res) => {
             res.status(200).header({'token': token,'expiresin': process.env.TOKEN_EXPIRES_IN}).send(user);
           })
         }).catch( (err) =>{
-          res.json(err);
+          return res.send(err);
       })
   
   };
