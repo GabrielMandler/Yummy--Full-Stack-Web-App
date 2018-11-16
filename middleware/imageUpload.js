@@ -44,7 +44,6 @@ let folderExist = (folderName) => {
           .then(()=>{ 
             return resolve(1);
           });
-    console.log("return 0");
     return resolve(0);
   });
 
@@ -55,30 +54,23 @@ let ImageUpload = {};
 ImageUpload.uploadToGcs = (req, res, next) => {
   if(!req.file) return next();
   let userId = req.body.userId;
-  let folderName = "/posts/";
-  let folderName2 = "/" + userId + "/";
-  console.log("userid is: " + userId);
-  folderExist(FOLDER_PREFIX + userId)
+  let folderName = FOLDER_PREFIX + userId + FOLDER_SUFFIX;
+  folderExist(FOLDER_PREFIX + userId + '/')
     .then((doesExist) => {
       if(!doesExist){
-        console.log("does exist return value: " ,doesExist, "foldername: " ,folderName);
         createFolders(req, folderName)
         .then(() => {
-          createFolders(req, folderName2)
-          console.log("got here");
           next()
         })
       }else{
-        console.log("got here2");
         next()
       }
     })
     .then(() =>{
-      console.log("let start!");
       // Can optionally add a path to the gcsname below by concatenating it before the filename
       const gcsname = req.file.originalname;
       let fileDir = folderName + gcsname;
-      const file = bucket.file(gcsname);
+      const file = bucket.file(fileDir);
 
       const stream = file.createWriteStream({
         metadata: {
