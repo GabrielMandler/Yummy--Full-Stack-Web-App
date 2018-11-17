@@ -12,7 +12,7 @@ const toolbar = ( props ) => (
     
     <header className={classes.Header}>
         <div className={classes.Toolbar}>
-        <DrawerToggle clicked={props.drawerToggleClicked} />
+            <DrawerToggle clicked={props.drawerToggleClicked} />
         <div className={classes.Logo}>
             <Logo logoType={Resources.logo} height={height} />
         </div>

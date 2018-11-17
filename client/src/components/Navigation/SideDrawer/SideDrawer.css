@@ -30,3 +30,44 @@
     height: 11%;
     margin-bottom: 32px;
 }
+
+
+/* close Icon  */
+
+#nav-close-icon span:nth-child(1) {
+    top: 0px;
+  }
+  
+  #nav-close-icon span:nth-child(2),#nav-close-icon span:nth-child(3) {
+    top: 18px;
+  }
+  
+  #nav-close-icon span:nth-child(4) {
+    top: 36px;
+  }
+  
+  #nav-close-icon.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  
+  #nav-close-icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #nav-close-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  #nav-close-icon.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }

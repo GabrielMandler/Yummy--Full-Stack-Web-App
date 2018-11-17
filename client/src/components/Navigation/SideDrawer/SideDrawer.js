@@ -7,6 +7,7 @@ import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import * as Resources from '../../../shared/resources';
 
 let height = "50px";
+
 const sideDrawer = ( props ) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
     if (props.open) {
