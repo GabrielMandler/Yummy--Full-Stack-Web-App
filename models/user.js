@@ -118,16 +118,16 @@ UserSchema.statics.editProfile = function(newUserData){
                 if(newUserData.isEditAfterRegistration){
                   currentGender = user.gender
                 }
-                User.updateOne({_id: newUserData.userId}, {
-                  username: newUserData.username,
-                  bio: newUserData.bio,
-                  gender: currentGender,
-                  profileImage: newUserData.imageDir,
-                  completedRegistration: true
-                })
-                .exec( (err, user) => {
-                  return Promise.resolve(user);
-                })
+                return User.updateOne({_id: newUserData.userId}, {
+                            username: newUserData.username,
+                            bio: newUserData.bio,
+                            gender: currentGender,
+                            profileImage: newUserData.imageDir,
+                            completedRegistration: true
+                          })
+                          .exec( (err, user) => {
+                            return Promise.resolve(user);
+                          })
               }) 
 
 }
