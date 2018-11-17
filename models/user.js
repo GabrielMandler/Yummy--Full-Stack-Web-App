@@ -119,15 +119,12 @@ UserSchema.statics.editProfile = function(newUserData){
                   currentGender = user.gender
                 }
                 return User.updateOne({_id: newUserData.userId}, {
-                            username: newUserData.username,
-                            bio: newUserData.bio,
-                            gender: currentGender,
-                            profileImage: newUserData.imageDir,
-                            completedRegistration: true
-                          })
-                          .exec( (err, user) => {
-                            return Promise.resolve(user);
-                          })
+                          username: newUserData.username,
+                          bio: newUserData.bio,
+                          gender: currentGender,
+                          profileImage: newUserData.imageDir,
+                          completedRegistration: true
+                        })
               }) 
 
 }
