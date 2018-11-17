@@ -222,13 +222,13 @@ class EditProfile extends Component{
 
 const mapDispatchToProps = state => {
     return {
-        loading: state.users.loading,
-        error: state.users.error,
+        loading: state.userData.loading,
+        error: state.userData.error,
         userId: state.auth.userId,
-        profileImage: state.users.profileImage,
-        username: state.users.username,
-        bio: state.users.bio,
-        gender: state.users.gender,
+        profileImage: state.userData.profileImage,
+        username: state.userData.username,
+        bio: state.userData.bio,
+        gender: state.userData.gender,
         token: state.auth.token,
         profileUpdated: state.userData.profileUpdated,
         completedRegistration: state.auth.completedRegistration

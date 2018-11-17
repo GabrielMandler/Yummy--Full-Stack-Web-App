@@ -45,7 +45,7 @@ class Search extends Component{
     render() {
         let usersList = (<img src={this.state.defaultSearchImage.src} alt={this.state.defaultSearchImage.alt}/>);
 
-        if(this.props.isInputSearchEmpty){
+        if(!this.props.isInputSearchEmpty){
             usersList = (
             <ul className={classes.usersList} >
                 {this.props.usersList.map( (user, index) => {
