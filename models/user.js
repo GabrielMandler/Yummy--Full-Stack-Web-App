@@ -125,10 +125,11 @@ UserSchema.statics.editProfile = function(newUserData){
             profileImage: newUserData.imageDir,
             completedRegistration: true
           })
-          .then( () =>{
-            return Promise.resolve(user);
-          })
-        })   
+        }) 
+        .then( () =>{
+          console.log("3")
+          return Promise.resolve(user);
+        })
 }
 
 UserSchema.statics.addNewPostToUser = function (userId, postId){
