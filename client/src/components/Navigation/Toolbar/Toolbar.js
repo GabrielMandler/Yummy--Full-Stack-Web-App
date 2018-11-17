@@ -6,7 +6,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import * as Resources from '../../../shared/resources';
 
-let height = "80px";
+let height = "60px";
 
 const toolbar = ( props ) => ( 
     
