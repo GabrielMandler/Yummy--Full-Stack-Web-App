@@ -69,6 +69,8 @@ exports.editProfile = (req, res) => {
   body.imageDir = req.file.cloudStoragePublicUrl;
 
   User.editProfile(body).then( (user) => {
+    console.log(user)
+
     return res.status(200).send(user);
   }).catch( err => {
     return res.status(400).send(err);
