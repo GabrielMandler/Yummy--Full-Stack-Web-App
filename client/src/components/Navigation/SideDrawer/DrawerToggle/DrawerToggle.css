@@ -9,13 +9,13 @@
     box-sizing: border-box;
     cursor: pointer;
     z-index: 999;
-    background-color: white;
+    background-color: #40A4C8;
 }
 
 .DrawerToggle div {
     width: 90%;
     height: 3px;
-    background-color: white;
+    background-color: #40A4C8;
 }
 
 /* Close Icon 
