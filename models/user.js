@@ -116,10 +116,11 @@ UserSchema.statics.editProfile = function(newUserData){
   if(newUserData.isEditAfterRegistration){
     User.findOne({_id: newUserData.userId})
         .then( (user) => {
+          console.log("1", currentGender)
           currentGender = user.gender
         })
   }
-  console.log(currentGender)
+  console.log("2", currentGender)
   return User.updateOne({_id: newUserData.userId}, {
     username: newUserData.username,
     bio: newUserData.bio,
