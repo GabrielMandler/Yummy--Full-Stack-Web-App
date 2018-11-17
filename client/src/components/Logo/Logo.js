@@ -4,9 +4,13 @@ import * as Resources from '../../shared/resources';
 import classes from './Logo.css';
 
 const logo = (props) => (
-    <div className={classes.Logo} style={{height: props.height}}>
-        <img src={Resources.logo} alt="MyBurger" />
-         MeetFeed 
+    <div style={{height: props.height}}>
+        <div className={classes.Logo}>
+            <img src={Resources.logo} alt="Logo" />
+        </div>
+        <div>
+            <img src={Resources.title} alt="title" />
+        </div>
     </div>
 );
 
