@@ -3,13 +3,14 @@ import React from 'react';
 import Logo from '../../components/Logo/Logo';
 import {NavLink} from "react-router-dom";
 import classes from './Auth.css';
+import * as Resources from '../../shared/resources';
 
 const auth = (props) => {
     return (
         <div className={classes.loginBox}>
             <div className={classes.loginContent}>
                 <div className={classes.logo}>
-                    <Logo />
+                    <Logo logoType={Resources.completeLogo} />
                 </div>
                 <h3>{props.mainTitle}</h3>
 
