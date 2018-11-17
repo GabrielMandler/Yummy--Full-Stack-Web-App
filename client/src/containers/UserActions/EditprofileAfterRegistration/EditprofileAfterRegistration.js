@@ -6,10 +6,13 @@ import Input from '../../../components/UI/Input/Input';
 import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Auth from '../../../components/Auth/Auth';
+
 import {checkValidity} from '../../../shared/utilities';
+
 import * as actions from '../../../store/actions/index';
 import * as Resources from '../../../shared/resources';
 
+import classes from './EditprofileAfterRegistration.css';
 
 class EditProfileAfterRegistration extends Component{
     state = {
@@ -106,18 +109,20 @@ class EditProfileAfterRegistration extends Component{
 
     previewImage = (file) => {
         var reader = new FileReader();
-        //var url = reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
       
         reader.onloadend = function (e) {
             this.setState({
-                previewProfileImage: [reader.result]
+                previewProfileImage:{
+                    src: reader.result
+                } 
             })
             }.bind(this);
     }
 
     render(){  
         
-        let profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} /> )
+        let profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} className={classes.profileImage} /> )
 
         const formElementsArray = [];
         for(let key in this.state.controls){
@@ -128,22 +133,23 @@ class EditProfileAfterRegistration extends Component{
         }
 
         let form = (
-            <div> {profileImage} 
-            <form onSubmit={this.submitHandler}>
+            <div> 
+                {profileImage} 
+                <form onSubmit={this.submitHandler}>
 
-                {formElementsArray.map(formElement => (
-                    <Input 
-                        key={formElement.id}
-                        elementType={formElement.config.elementType}
-                        elementConfig={formElement.config.elementConfig}
-                        value={formElement.config.value}
-                        invalid={!formElement.config.valid}
-                        shouldValidate={formElement.config.validation}
-                        touched={formElement.config.touched}
-                        changed={(event) => this.inputChangedHandler(event, formElement.id)} />
-                ))}
-                <Button btnType="Success" disabled={!this.state.formIsValid}>{this.state.button.text}</Button>
-            </form>
+                    {formElementsArray.map(formElement => (
+                        <Input 
+                            key={formElement.id}
+                            elementType={formElement.config.elementType}
+                            elementConfig={formElement.config.elementConfig}
+                            value={formElement.config.value}
+                            invalid={!formElement.config.valid}
+                            shouldValidate={formElement.config.validation}
+                            touched={formElement.config.touched}
+                            changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+                    ))}
+                    <Button btnType="Success" disabled={!this.state.formIsValid}>{this.state.button.text}</Button>
+                </form>
             </div>
         );
         if(this.props.loading){

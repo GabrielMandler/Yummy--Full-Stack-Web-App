@@ -143,11 +143,13 @@ class EditProfile extends Component{
 
     previewImage = (file) => {
         var reader = new FileReader();
-        //var url = reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
       
         reader.onloadend = function (e) {
             this.setState({
-                previewProfileImage: [reader.result]
+                previewProfileImage:{
+                    src: reader.result
+                } 
             })
             }.bind(this);
     }

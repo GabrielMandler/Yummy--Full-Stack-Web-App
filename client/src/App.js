@@ -27,7 +27,6 @@ class App extends Component {
     let redirect = this.props.render ?  <Redirect to="/login" /> : null;
       
     routes = (
-
       <Switch>
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
@@ -35,9 +34,9 @@ class App extends Component {
         
       </Switch>
     );
-   
-    if ( this.props.isAuthenticated && this.props.completedRegistration) {
 
+
+    if ( this.props.isAuthenticated && this.props.completedRegistration) {
       routes = (
         <Layout userId={this.props.userId}>
             <Switch>
@@ -52,7 +51,8 @@ class App extends Component {
         </Layout>
       );
     }
-    if ( this.props.isAuthenticated && !this.props.completedRegistration ) {
+       
+    if ( this.props.isAuthenticated && this.props.completedRegistration === 'false' ) {
       routes = (
         <Switch>
           <Route path="/login" component={Login} />
