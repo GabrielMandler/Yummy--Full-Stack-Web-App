@@ -10,7 +10,7 @@ const auth = (props) => {
         <div className={classes.loginBox}>
             <div className={classes.loginContent}>
                 <div className={classes.logo}>
-                    <Logo logoType={Resources.completeLogo} />
+                    <Logo logoType={Resources.completeLogo}/>
                 </div>
                 <h3>{props.mainTitle}</h3>
 
