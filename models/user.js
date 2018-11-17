@@ -112,15 +112,14 @@ UserSchema.statics.toggleFollowUser = function(userId, currentUserId){
 }
 
 UserSchema.statics.editProfile = function(newUserData){
-  let currentGender = newUserData.gender
+  var currentGender = newUserData.gender
   if(newUserData.isEditAfterRegistration){
     User.findOne({_id: newUserData.userId})
         .then( (user) => {
           currentGender = user.gender
-          console.log(newUserData.userId, user, currentGender)
         })
   }
-  
+  console.log(currentGender)
   return User.updateOne({_id: newUserData.userId}, {
     username: newUserData.username,
     bio: newUserData.bio,
