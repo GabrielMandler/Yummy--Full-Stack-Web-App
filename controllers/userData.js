@@ -69,7 +69,7 @@ exports.editProfile = (req, res) => {
   var body = _.pick(req.body, ['bio', 'username', 'userId', 'gender', 'isEditAfterRegistration']);
 
   body.imageDir = req.file.cloudStoragePublicUrl;
-
+  console.log("0 ")
   User.editProfile(body).then( (user) => {
     return res.status(200).send(user);
   }).catch( err => {
