@@ -125,7 +125,9 @@ UserSchema.statics.editProfile = function(newUserData){
             profileImage: newUserData.imageDir,
             completedRegistration: true
           })
-          return Promise.resolve(user);
+          .then( () =>{
+            return Promise.resolve(user);
+          })
         })   
 }
 
