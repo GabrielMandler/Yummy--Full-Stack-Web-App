@@ -1,4 +1,4 @@
-.DrawerToggle {
+/* .DrawerToggle {
     width: 40px;
     height: 100%;
     display: flex;
@@ -8,13 +8,57 @@
     padding: 10px 0;
     box-sizing: border-box;
     cursor: pointer;
+    z-index:999;
 }
 
 .DrawerToggle div {
     width: 90%;
     height: 3px;
     background-color: white;
-}
+} */
+
+/* Icon 3 */
+
+#nav-close-icon span:nth-child(1) {
+    top: 0px;
+  }
+  
+  #nav-close-icon span:nth-child(2),#nav-close-icon span:nth-child(3) {
+    top: 18px;
+  }
+  
+  #nav-close-icon span:nth-child(4) {
+    top: 36px;
+  }
+  
+  #nav-close-icon.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  
+  #nav-close-icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #nav-close-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  #nav-close-icon.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  
+
+
 
 @media (min-width: 500px) {
     .DrawerToggle {
