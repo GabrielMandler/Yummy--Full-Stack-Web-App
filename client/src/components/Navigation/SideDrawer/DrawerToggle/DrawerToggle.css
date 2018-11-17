@@ -9,7 +9,6 @@
     box-sizing: border-box;
     cursor: pointer;
     z-index: 999;
-    background-color: #40A4C8;
 }
 
 .DrawerToggle div {
