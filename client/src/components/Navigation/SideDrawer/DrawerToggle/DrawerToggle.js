@@ -7,12 +7,15 @@ const drawerToggle = (props) => {
     if (props.clicked) {
         attachedClasses = [classes.DrawerToggle, classes.Open];
     }
-    <div className={attachedClasses.join(' ')} onClick={props.clicked}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    return (
+        <div className={attachedClasses.join(' ')} onClick={props.clicked}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    );
 };
+
 
 export default drawerToggle;
