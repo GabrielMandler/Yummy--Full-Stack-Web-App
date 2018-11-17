@@ -52,7 +52,7 @@ class App extends Component {
       );
     }
        
-    if ( this.props.isAuthenticated && this.props.completedRegistration === 'false' ) {
+    if ( this.props.isAuthenticated && !this.props.completedRegistration) {
       routes = (
         <Switch>
           <Route path="/login" component={Login} />
