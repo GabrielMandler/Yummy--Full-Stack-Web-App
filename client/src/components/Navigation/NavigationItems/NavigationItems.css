@@ -17,4 +17,10 @@
     .NavigationItems {
         flex-flow: row;
     }
+    .SubMenu{
+        display: flex;
+        flex-flow: column;
+        border-left: 1px solid white;
+    
+    }
 }
