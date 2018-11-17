@@ -16,9 +16,6 @@ const sideDrawer = ( props ) => {
     return (
         <Aux>
             <div className={attachedClasses.join(' ')}>
-                <div className={classes.Logo}>
-                    <Logo logoType={Resources.logo} height={height} />
-                </div>
                 <nav>
                     <NavigationItems />
                 </nav>
