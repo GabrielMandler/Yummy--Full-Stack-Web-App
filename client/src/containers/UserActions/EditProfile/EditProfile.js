@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router'
 
 import Aux from "../../../hoc/Auxiliary/Auxiliary";
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import Button from '../../../components/UI/Button/Button';
 import {checkValidity} from '../../../shared/utilities';
@@ -192,6 +193,19 @@ class EditProfile extends Component{
             
             redirect = (<Redirect to={'/'} />)
         }
+
+        if(this.props.loading){
+            form = <Spinner />
+        }
+        
+        let errorMessage = null;
+
+        if(this.props.error){
+            errorMessage = (
+                <p> {this.props.error.message} </p>
+            )
+        }
+
         return (  
             
             <Aux>
@@ -200,7 +214,7 @@ class EditProfile extends Component{
                 <h3>{this.state.titles.main}</h3>
                 {profileImage}
                 {form}
-
+                {errorMessage}
             </Aux>
         )
     }

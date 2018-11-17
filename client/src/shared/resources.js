@@ -1,5 +1,5 @@
-export const user = '../assets/images/user.png';
-export const users = '../assets/images/users.png';
-export const newpost = '../assets/images/newpost.png';
-export const logo = '../assets/images/logo.png';
-export const completeLogo = '../assets/images/logo2.png';
+export const user = './assets/user.png';
+export const users = './assets/users.png';
+export const newpost = './assets/newpost.png';
+export const logo = './assets/logo.png';
+export const completeLogo = './assets/logo2.png';
