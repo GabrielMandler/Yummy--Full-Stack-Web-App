@@ -118,7 +118,6 @@ UserSchema.statics.editProfile = function(newUserData){
                 if(newUserData.isEditAfterRegistration){
                   currentGender = user.gender
                 }
-                console.log(currentGender)
                 User.updateOne({_id: newUserData.userId}, {
                   username: newUserData.username,
                   bio: newUserData.bio,
@@ -126,10 +125,11 @@ UserSchema.statics.editProfile = function(newUserData){
                   profileImage: newUserData.imageDir,
                   completedRegistration: true
                 })
+                .exec( (err, user) => {
+                  return resolve(user);
+                })
               }) 
-              .then( () =>{
-                return Promise.resolve(user);
-              })
+
 }
 
 UserSchema.statics.addNewPostToUser = function (userId, postId){
