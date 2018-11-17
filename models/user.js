@@ -126,7 +126,7 @@ UserSchema.statics.editProfile = function(newUserData){
                   completedRegistration: true
                 })
                 .exec( (err, user) => {
-                  return resolve(user);
+                  return Promise.resolve(user);
                 })
               }) 
 
