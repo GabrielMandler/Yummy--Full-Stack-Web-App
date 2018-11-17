@@ -11,18 +11,12 @@
     z-index: 999;
 }
 
-.DrawerToggle div {
+.DrawerToggle span {
     width: 90%;
     height: 3px;
     background-color: #40A4C8;
 }
-.Open {
-  transform: translateX(0);
-}
 
-.Close {
-  transform: translateX(-100%);
-}
 /* Close Icon 
 .DrawerToggle {
     z-index: 6;
