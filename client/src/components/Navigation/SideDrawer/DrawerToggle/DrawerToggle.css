@@ -40,8 +40,8 @@
     z-index: 999;
     display: block;
     position: absolute;
-    height: 3px;
-    width: 90%;
+    height: 9px;
+    width: 100%;
     background: white;
     border-radius: 9px;
     opacity: 1;
@@ -57,24 +57,29 @@
   }
 
 .DrawerToggle span:nth-child(1) {
+    z-index: 999;
     top: 0px;
   }
   
   .DrawerToggle span:nth-child(2),.DrawerToggle span:nth-child(3) {
+    z-index: 999;
     top: 18px;
   }
   
   .DrawerToggle span:nth-child(4) {
+    z-index: 999;
     top: 36px;
   }
   
   .DrawerToggle.open span:nth-child(1) {
+    z-index: 999;
     top: 18px;
     width: 0%;
     left: 50%;
   }
   
   .DrawerToggle.open span:nth-child(2) {
+    z-index: 999;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -82,6 +87,7 @@
   }
   
   .DrawerToggle.open span:nth-child(3) {
+    z-index: 999;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
@@ -89,6 +95,7 @@
   }
   
   .DrawerToggle.open span:nth-child(4) {
+    z-index: 999;
     top: 18px;
     width: 0%;
     left: 50%;
