@@ -59,7 +59,6 @@ exports.addNewPost = (req, res) => {
                   res.status(200).send(post);
                 })
                 .catch( (err) => {
-                  console.log(err)
                   res.status(400).send(err);
                 })
            })
@@ -67,9 +66,8 @@ exports.addNewPost = (req, res) => {
   
 exports.editProfile = (req, res) => {
   var body = _.pick(req.body, ['bio', 'username', 'userId', 'gender', 'isEditAfterRegistration']);
-
   body.imageDir = req.file.cloudStoragePublicUrl;
-  console.log("0 ")
+
   User.editProfile(body).then( (user) => {
     return res.status(200).send(user);
   }).catch( err => {
