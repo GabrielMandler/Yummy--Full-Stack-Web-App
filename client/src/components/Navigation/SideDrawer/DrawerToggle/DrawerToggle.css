@@ -19,6 +19,7 @@
 
 /* Close Icon  */
 .DrawerToggle {
+    z-index: 999;
     width: 60px;
     height: 45px;
     position: relative;
