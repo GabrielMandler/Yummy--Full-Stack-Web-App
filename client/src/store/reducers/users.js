@@ -33,7 +33,8 @@ const resetUserFeed = (state, action) => {
         numberOfPostFetched: 0,
         message: null,
         currentPosts: [],
-        doneFetch: false
+        doneFetch: false,
+        isInputSearchEmpty: true
     })
 }
 const isMainUser = (state, action) => {
