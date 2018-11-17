@@ -67,7 +67,7 @@ exports.addNewPost = (req, res) => {
   
 exports.editProfile = (req, res) => {
   var body = _.pick(req.body, ['bio', 'username', 'userId', 'gender', 'isEditAfterRegistration']);
-
+  console.log("userid: ", body.userId);
   body.imageDir = req.file.cloudStoragePublicUrl;
 
   User.editProfile(body).then( (user) => {
