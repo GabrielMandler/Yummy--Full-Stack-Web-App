@@ -4,6 +4,7 @@ import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.css';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
+import * as Resources from '../../../shared/resources';
 
 const sideDrawer = ( props ) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
@@ -14,7 +15,7 @@ const sideDrawer = ( props ) => {
         <Aux>
             <div className={attachedClasses.join(' ')}>
                 <div className={classes.Logo}>
-                    <Logo />
+                    <Logo logoType={Resources.logo}  />
                 </div>
                 <nav>
                     <NavigationItems />

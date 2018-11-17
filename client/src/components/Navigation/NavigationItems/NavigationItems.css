@@ -9,7 +9,7 @@
 }
 .SubMenu{
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     border-left: 1px solid white;
 
 }
