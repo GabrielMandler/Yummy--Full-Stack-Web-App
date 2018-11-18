@@ -7,9 +7,14 @@
   .footer{
       margin-top: 5em;
   }
-h3{
-    margin-left: -1em;
-}
+  .likes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #008CBA;
+    height: 20px;
+    width:100%;
+  }
  button{
       width:100%;
       height:3em;

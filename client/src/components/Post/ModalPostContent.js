@@ -9,7 +9,7 @@ const ModalPostContent = (props) => {
     return (
         <Aux>
             <img className={classes.image} src={props.src} alt={props.alt} />
-            <h3> {props.likes} Likes </h3>
+            <div className={classes.likes}> {props.likes} Likes </div>
             <p> {props.description} </p>
         </Aux>
     );
