@@ -26,19 +26,23 @@ var UserSchema = new mongoose.Schema({
   },
   bio: {
     type: String,
-    required: false
+    required: false,
+    default: ''
   },
   profileImage: {
     type: String,
     required: false,
+    default: ''
   },
   gender: {
     type: String,
-    required: false
+    required: false,
+    default: 'male'
   },
   posts: [{ 
     type: mongoose.Schema.ObjectId, 
-    ref: 'Post' ,required: false
+    ref: 'Post' ,required: false,
+    default: []
   }],
   followingArr: [{
     type: String, 
@@ -113,13 +117,13 @@ UserSchema.statics.toggleFollowUser = function(userId, currentUserId){
 
 UserSchema.statics.editProfile = function(newUserData){
     let currentGender = newUserData.gender
-    return User.findOne({"_id": ObjectID(newUserData.userId) })
+    return User.findOne({"_id": newUserData.userId })
               .then( (user) => {
                 if(newUserData.isEditAfterRegistration){
                   currentGender = user.gender
                 }
                 
-                return User.updateOne({"_id": ObjectID(newUserData.userId) }, {
+                return User.updateOne({"_id": newUserData.userId }, {
                           username: newUserData.username,
                           bio: newUserData.bio,
                           gender: currentGender,
