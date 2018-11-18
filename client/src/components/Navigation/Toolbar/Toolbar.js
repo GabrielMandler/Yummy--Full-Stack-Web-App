@@ -8,8 +8,9 @@ import * as Resources from '../../../shared/resources';
 
 let height = "50px";
 
-const toolbar = ( props ) => ( 
-    
+const toolbar = ( props ) => {
+    console.log("toolbar", props.userId)
+    return (
     <header className={classes.Header}>
         <div className={classes.Toolbar}>
             <DrawerToggle clicked={props.drawerToggleClicked} />
@@ -22,6 +23,7 @@ const toolbar = ( props ) => (
 
         </div>
     </header>
-);
+    )
+};
 
 export default toolbar;
