@@ -118,8 +118,8 @@ UserSchema.statics.editProfile = function(newUserData){
                 if(newUserData.isEditAfterRegistration){
                   currentGender = user.gender
                 }
-                console.log(newUserData)
-                return User.updateOne({_id: newUserData.userId}, {
+                
+                return User.updateOne({_id:{ $oid: newUserData.userId } }, {
                           username: newUserData.username,
                           bio: newUserData.bio,
                           gender: currentGender,
