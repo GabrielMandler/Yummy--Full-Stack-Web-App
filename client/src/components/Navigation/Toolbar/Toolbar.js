@@ -12,13 +12,13 @@ const toolbar = ( props ) => (
     
     <header className={classes.Header}>
         <div className={classes.Toolbar}>
+            <DrawerToggle clicked={props.drawerToggleClicked} />
             <div className={classes.Logo}>
                 <Logo logoType={Resources.logo} height={height} />
             </div>
             <nav className={classes.DesktopOnly}>
                 <NavigationItems userId={props.userId} />
             </nav>
-            <DrawerToggle clicked={props.drawerToggleClicked} />
 
         </div>
     </header>

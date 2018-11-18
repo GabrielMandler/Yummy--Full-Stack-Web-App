@@ -12,10 +12,10 @@ const navigationItems = (props) => {
             <NavigationItem link="/" exact>feed</NavigationItem>
             <NavigationItem link="/search" exact>search</NavigationItem>
             <NavigationItem link={usersLink} exact>Profile</NavigationItem>
-            <span className={classes.verticalLine}>
+            <div className={classes.SubMenu}>
                 <NavigationItem link="/newPost">Add new post!</NavigationItem>
                 <NavigationItem link="/Logout">Logout</NavigationItem>
-            </span>
+            </div>
         </ul>
         </Aux>
     );
