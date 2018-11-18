@@ -22,7 +22,6 @@ class Layout extends Component {
     }
 
     render () {
-        console.log("layout", this.props.userId)
         return (
             <Aux>
                 <Toolbar 

@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 import classes from './NavigationItem.css';
 
-const navigationItem = ( props ) => (
+const navigationItem = ( props ) => {
+    console.log(props.link);
+    return (
     <li className={classes.NavigationItem}>
         <NavLink 
             to={props.link}
@@ -15,6 +17,7 @@ const navigationItem = ( props ) => (
             </NavLink>
     
     </li>
-);
+    )
+};
 
 export default navigationItem;

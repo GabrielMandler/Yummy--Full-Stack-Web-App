@@ -6,6 +6,7 @@ import Aux from '../../../hoc/Auxiliary/Auxiliary';
 
 const navigationItems = (props) => {
     let usersLink = 'users?id='+ props.userId;
+    console.log()
     return (
         <Aux>
         <ul className={classes.NavigationItems}>
