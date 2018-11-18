@@ -19,8 +19,8 @@ h1{
     color:white;
 }
 .searchImage{
-    diaply:flex;
+    display:flex;
     align-items: center;
-    height:100px;
-    width: 100px;
+    height:150px;
+    width: 150px;
 }
