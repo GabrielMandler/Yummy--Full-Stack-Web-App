@@ -23,7 +23,7 @@ exports.register = (req, res) => {
   var body = _.pick(req.body, ['email', 'password', 'gender']);
   body.profileImage = 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/assets/user.png';
   var user = new User(body);
-  body.username = user._id;
+  user.username = user._id;
 
   user.save().then( () => {
     return user.generateAuthToken();

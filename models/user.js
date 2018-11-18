@@ -39,7 +39,8 @@ var UserSchema = new mongoose.Schema({
   },
   posts: [{ 
     type: mongoose.Schema.ObjectId, 
-    ref: 'Post' ,required: false,
+    ref: 'Post' ,
+    required: false,
     default: []
   }],
   followingArr: [{
