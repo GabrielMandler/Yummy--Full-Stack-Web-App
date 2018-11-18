@@ -24,12 +24,15 @@
     margin:0.5em;
     border-radius: 30px 30px;
     border: solid 1px black;
-}
-.title >img{
-  height: 5em;
-  width: 5em;
-  margin: 0.5em;
-}
+  }
+  .title > h1{
+    color:black;
+  }
+  .title >img{
+    height: 5em;
+    width: 5em;
+    margin: 0.5em;
+  }
   .imageDiv{
     height: 50%;
   }

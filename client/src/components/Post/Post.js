@@ -12,7 +12,7 @@ const PostComponent = (props) => {
             <div className={classes.post} key={props.index}>
                 <Link to={props.userLink + props.postUserId}>
                     <div className={classes.Title} >
-                        <img src={props.profileImage} className={classes.ProfileImage} alt={props.postAlt} />
+                        <img src={props.userProfileImage} className={classes.ProfileImage} alt={props.postAlt} />
                         <h1>{props.postUsername}</h1>
                     </div>
                 </Link>
