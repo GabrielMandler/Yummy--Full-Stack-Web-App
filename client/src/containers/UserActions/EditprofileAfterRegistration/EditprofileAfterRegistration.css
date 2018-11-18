@@ -1,6 +1,6 @@
 .profileImage{
     display:flex;
-    align-items: center;
+    align-self: center;
     height: 150px;
-    width: 300px;
+    width: 250px;
 }
