@@ -14,7 +14,7 @@ const sideDrawer = ( props ) => {
         <Aux>
             <div className={attachedClasses.join(' ')}>
                 <nav>
-                    <NavigationItems />
+                    <NavigationItems userId={props.userId} clicked={props.drawerToggleClicked} />
                 </nav>
             </div>
         </Aux>

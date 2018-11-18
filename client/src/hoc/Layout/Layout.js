@@ -32,7 +32,10 @@ class Layout extends Component {
                 <SideDrawer
                     isAuth={this.props.isAuthenticated}
                     open={this.state.showSideDrawer}
-                    closed={this.sideDrawerClosedHandler} />
+                    closed={this.sideDrawerClosedHandler} 
+                    drawerToggleClicked={this.sideDrawerToggleHandler} 
+                    userId={this.props.userId}
+                    />
                 <div className={classes.Feed}>
                     <main className={classes.Content}>
                         {this.props.children}
