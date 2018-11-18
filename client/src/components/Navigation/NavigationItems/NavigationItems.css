@@ -7,6 +7,9 @@
     align-items: center;
     height: 100%;
 }
+.verticalLine{
+    border-left: thick solid white;
+}
 .SubMenu{
     display: flex;
     flex-flow: row;

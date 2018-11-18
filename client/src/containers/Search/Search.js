@@ -43,7 +43,7 @@ class Search extends Component{
     }
 
     render() {
-        let usersList = (<img src={this.state.defaultSearchImage.src} alt={this.state.defaultSearchImage.alt}/>);
+        let usersList = (<img src={this.state.defaultSearchImage.src} alt={this.state.defaultSearchImage.alt} className={classes.searchImage} />);
 
         if(!this.props.isInputSearchEmpty){
             usersList = (
@@ -95,7 +95,7 @@ const mapStateToProps = state => {
         loading: state.users.loading,
         error: state.users.error,
         usersList: state.users.usersList,
-        inputSearchNotEmpty: state.users.isInputSearchEmpty,
+        isInputSearchEmpty: state.users.isInputSearchEmpty,
         token: state.auth.token
     };
 };

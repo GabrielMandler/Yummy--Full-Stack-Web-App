@@ -158,9 +158,7 @@ class EditProfile extends Component{
     render(){  
         
         let profileImage = ( <img src={this.state.previewProfileImage.src} alt={this.state.previewProfileImage.alt} className={classes.profileImage} /> )
-        if(this.props.profileImage != null){
-            profileImage = ( <img src={this.props.profileImage} alt={this.state.previewProfileImage.alt} className={classes.profileImage} /> )
-        }
+
         const formElementsArray = [];
         for(let key in this.state.controls){
             formElementsArray.push({
