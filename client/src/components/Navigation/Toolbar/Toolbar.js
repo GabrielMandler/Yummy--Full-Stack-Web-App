@@ -17,7 +17,7 @@ const toolbar = ( props ) => (
                 <Logo logoType={Resources.logo} height={height} />
             </div>
             <nav className={classes.DesktopOnly}>
-                <NavigationItems userId={props.userId} />
+                <NavigationItems userId={props.userId} clicked={props.drawerToggleClicked} />
             </nav>
 
         </div>
