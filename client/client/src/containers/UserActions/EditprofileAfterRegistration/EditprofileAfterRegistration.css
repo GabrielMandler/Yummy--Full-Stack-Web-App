@@ -1,0 +1,6 @@
+.profileImage{
+    display:flex;
+    align-self: center;
+    height: 150px;
+    width: 250px;
+}

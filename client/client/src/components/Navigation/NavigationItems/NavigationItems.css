@@ -1,0 +1,26 @@
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.SubMenu{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+}
+@media (min-width: 500px) {
+    .NavigationItems {
+        flex-flow: row;
+    }
+    .SubMenu{
+        display: flex;
+        flex-flow: row;
+        border-left: 1px solid white;
+        border-top: 0px;
+    }
+}
