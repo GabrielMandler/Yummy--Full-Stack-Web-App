@@ -50,6 +50,7 @@ class Feed extends Component{
                             click={(event) => this.onLikeClick( index, post._id)} 
                             postUserId={post.user.userId}  
                             postUsername={post.user.username} 
+                            userProfileImage={post.user.profileImage} 
                             img={post.image} 
                             imgAlt="postImage" 
                             likes={post.likes} 
