@@ -3,9 +3,9 @@ import React from 'react';
 import classes from './DrawerToggle.css';
 
 const drawerToggle = (props) => {
-    let attachedClasses = [classes.DrawerToggle];
+    let attachedClasses = [classes.DrawerToggle, classes.Close];
     if (props.clicked) {
-        attachedClasses = [classes.DrawerToggle];
+        attachedClasses = [classes.DrawerToggle, classes.Open];
     }
     return (
         <div className={attachedClasses.join(' ')} onClick={props.clicked}>
