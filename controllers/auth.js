@@ -24,6 +24,7 @@ exports.register = (req, res) => {
   body.profileImage = 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/assets/user.png';
   var user = new User(body);
   user.username = user._id;
+  user.bio = user._id;
 
   user.save().then( () => {
     return user.generateAuthToken();
