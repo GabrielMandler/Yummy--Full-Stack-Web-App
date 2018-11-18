@@ -4,9 +4,6 @@ const jwt = require('jsonwebtoken');
 const validator = require('validator');
 
 var UserSchema = new mongoose.Schema({
-  _id: { 
-    type: String 
-  },
   email: {
     type: String,
     unique: true,
@@ -122,7 +119,7 @@ UserSchema.statics.editProfile = function(newUserData){
                   currentGender = user.gender
                 }
                 
-                return User.updateOne({_id:newUserData.userId }, {
+                return User.updateOne({_id: newUserData.userId }, {
                           username: newUserData.username,
                           bio: newUserData.bio,
                           gender: currentGender,
