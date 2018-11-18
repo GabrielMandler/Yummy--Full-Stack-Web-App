@@ -25,7 +25,7 @@ exports.register = (req, res) => {
   var user = new User(body);
   user.username = user._id;
   user.bio = user._id;
-  console.log(user._id)
+
   user.save().then( () => {
     return user.generateAuthToken();
   }).then( token => {
