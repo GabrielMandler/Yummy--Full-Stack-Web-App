@@ -6,7 +6,6 @@
     flex-flow: column;
     align-items: center;
     height: 100%;
-    color: white;
 }
 .SubMenu{
     display: flex;
