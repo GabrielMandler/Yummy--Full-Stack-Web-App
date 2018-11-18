@@ -43,6 +43,7 @@
     flex-flow: row wrap;
     margin: 0.5em;
     margin-left: 2.2em;
+    margin-bottom: 0.2em;
 }
 .Image{
     height: 13em;
