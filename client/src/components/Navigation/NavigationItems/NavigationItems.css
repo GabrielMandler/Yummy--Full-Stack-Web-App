@@ -10,7 +10,7 @@
 
 .SubMenu{
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     border-left: 1px solid white;
 }
 @media (min-width: 500px) {
@@ -19,7 +19,7 @@
     }
     .SubMenu{
         display: flex;
-        flex-flow: column;
+        flex-flow: row;
         border-left: 1px solid white;
     
     }
