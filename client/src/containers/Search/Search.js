@@ -43,7 +43,11 @@ class Search extends Component{
     }
 
     render() {
-        let usersList = (<img src={this.state.defaultSearchImage.src} alt={this.state.defaultSearchImage.alt} className={classes.searchImage} />);
+        let usersList = (
+            <div className={classes.searchImage}>
+                <img src={this.state.defaultSearchImage.src} alt={this.state.defaultSearchImage.alt} />
+            </div>
+            );
 
         if(!this.props.isInputSearchEmpty){
             usersList = (
