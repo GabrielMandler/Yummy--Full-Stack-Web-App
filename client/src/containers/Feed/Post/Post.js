@@ -72,6 +72,7 @@ class Post extends Component{
                             userLink={this.state.userLink} 
                             postUserId={this.props.postUserId}
                             postUsername={this.props.postUsername} 
+                            ProfileImage={this.props.userProfileImage}
                             postImage={this.props.img} 
                             postAlt={this.props.imgAlt} 
                             btnType={this.state.likeButton.btnType}
