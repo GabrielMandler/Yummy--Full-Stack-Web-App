@@ -11,9 +11,8 @@ var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com';
 var bucket = storage.bucket(BUCKET_NAME);
 
 function getPublicUrl(userId, filename) {
-  return 'https://storage.cloud.google.com/' + BUCKET_NAME + '/' + FOLDER_PREFIX + userId + '/' + filename;
+  return 'https://storage.googleapis.com/staging.' + BUCKET_NAME + '/' + FOLDER_PREFIX + userId + '/' + filename;
 }
-
 let createFolders = (req, folderName) => {
   var folder = bucket.file(folderName);
   return new Promise( (resolve, reject) => {
