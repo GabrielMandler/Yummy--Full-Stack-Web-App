@@ -5,13 +5,13 @@ var storage = new Storage({
     projectId: 'webproject-cd3b2'
 });
 var FOLDER_PREFIX = 'users/';
-var BUCKET_NAME = 'webproject-cd3b2.appspot.com';
+var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com';
 
 // Reference an existing bucket.
 var bucket = storage.bucket(BUCKET_NAME);
 
 function getPublicUrl(userId, filename) {
-  return 'https://storage.googleapis.com/staging.' + BUCKET_NAME + '/' + FOLDER_PREFIX + userId + '/' + filename;
+  return 'https://storage.googleapis.com/' + BUCKET_NAME + '/' + FOLDER_PREFIX + userId + '/' + filename;
 }
 let createFolders = (req, folderName) => {
   var folder = bucket.file(folderName);
