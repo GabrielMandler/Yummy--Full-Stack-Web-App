@@ -3,6 +3,7 @@ html{
   height: 100%;
   background-image: url("https://storage.googleapis.com/staging.webproject-cd3b2.appspot.com/assets/background.jpeg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 body {
   margin: 0;
