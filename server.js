@@ -17,13 +17,15 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use(express.static(path.resolve(__dirname, "client", "build")));
-app.get("/*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
 
 app.use('/api/auth' ,auth);
 app.use('/api/public' ,public);
 app.use('/api/userData' ,userData);
+app.get("/*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
+
+
 
 // listen on port 3000
 app.listen(port, function () {
