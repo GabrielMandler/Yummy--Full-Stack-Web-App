@@ -4,7 +4,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2em;
+    display: flex;
+    align-items: center;
 }
 
 .loginContent{
@@ -13,7 +14,6 @@
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    margin-top: 2em;
     padding-top:2em;
 
 }
