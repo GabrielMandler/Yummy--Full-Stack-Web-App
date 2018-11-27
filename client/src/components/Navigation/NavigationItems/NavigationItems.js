@@ -11,8 +11,8 @@ const navigationItems = (props) => {
     return (
         <Aux>
         <ul className={classes.NavigationItems}>
-            <NavigationItem link="/" exact clicked={props.clicked} icon={Resources.iconHome} alt="feed">feed</NavigationItem>
-            <NavigationItem link="/search" exact clicked={props.clicked} icon={Resources.iconSearch} alt="search">search</NavigationItem>
+            <NavigationItem link="/" exact clicked={props.clicked} icon={Resources.iconHome} alt="Feed">Feed</NavigationItem>
+            <NavigationItem link="/search" exact clicked={props.clicked} icon={Resources.iconSearch} alt="Search">Search</NavigationItem>
             <NavigationItem link={usersLink} exact clicked={props.clicked} icon={Resources.iconUser} alt="Profile">Profile</NavigationItem>
             <span className={classes.SubMenu}>
                 <NavigationItem link="/newPost" clicked={props.clicked} icon={Resources.iconAddNew} alt="Add new post!">Add new post!</NavigationItem>
