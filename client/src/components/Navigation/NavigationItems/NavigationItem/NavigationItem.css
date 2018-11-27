@@ -19,8 +19,9 @@
     color: #40A4C8;
 }
 .NavigationItem .Icon{
-    height: 15px;
-    width:15px;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
 }
 @media (min-width: 500px) {
     .NavigationItem {
