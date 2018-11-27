@@ -18,7 +18,7 @@
 .NavigationItem a.active {
     color: #40A4C8;
 }
-.NavigationItem .Icon{
+.Icon{
     height: 20px;
     width: 20px;
     margin-right: 5px;
