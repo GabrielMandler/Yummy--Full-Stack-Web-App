@@ -1,15 +1,15 @@
 
 .loginBox{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .loginContent{
     background-color: #703B09;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     border-radius: 10px;
     padding-top:2em;
