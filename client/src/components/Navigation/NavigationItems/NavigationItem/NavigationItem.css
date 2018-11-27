@@ -18,7 +18,11 @@
 .NavigationItem a.active {
     color: #40A4C8;
 }
-
+.NavigationItem .Icon{
+    border-radius: 30px;
+    height: 5px;
+    width:5px;
+}
 @media (min-width: 500px) {
     .NavigationItem {
         margin: 0;
