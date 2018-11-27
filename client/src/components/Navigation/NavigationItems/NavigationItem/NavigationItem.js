@@ -10,7 +10,7 @@ const navigationItem = ( props ) => (
             exact={props.exact}
             activeClassName={classes.active}>
                 <div onClick={props.clicked}>
-                    <img src = {props.icon} className={classes.Icon}/>
+                    <img src = {props.icon} className={classes.Icon} alt={props.alt}/>
                     {props.children}
                 </div>
             </NavLink>

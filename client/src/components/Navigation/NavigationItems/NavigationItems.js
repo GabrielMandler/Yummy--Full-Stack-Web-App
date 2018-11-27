@@ -11,12 +11,12 @@ const navigationItems = (props) => {
     return (
         <Aux>
         <ul className={classes.NavigationItems}>
-            <NavigationItem link="/" exact clicked={props.clicked} icon={Resources.iconHome}>feed</NavigationItem>
-            <NavigationItem link="/search" exact clicked={props.clicked} icon={Resources.iconSearch}>search</NavigationItem>
-            <NavigationItem link={usersLink} exact clicked={props.clicked} icon={Resources.iconUser}>Profile</NavigationItem>
+            <NavigationItem link="/" exact clicked={props.clicked} icon={Resources.iconHome} alt="feed">feed</NavigationItem>
+            <NavigationItem link="/search" exact clicked={props.clicked} icon={Resources.iconSearch} alt="search">search</NavigationItem>
+            <NavigationItem link={usersLink} exact clicked={props.clicked} icon={Resources.iconUser} alt="Profile">Profile</NavigationItem>
             <span className={classes.SubMenu}>
-                <NavigationItem link="/newPost" clicked={props.clicked} icon={Resources.iconAddNew}>Add new post!</NavigationItem>
-                <NavigationItem link="/Logout" clicked={props.clicked} icon={Resources.iconSignout}>Logout</NavigationItem>
+                <NavigationItem link="/newPost" clicked={props.clicked} icon={Resources.iconAddNew} alt="Add new post!">Add new post!</NavigationItem>
+                <NavigationItem link="/Logout" clicked={props.clicked} icon={Resources.iconSignout} alt="Logout">Logout</NavigationItem>
             </span>
         </ul>
         </Aux>
