@@ -14,13 +14,14 @@
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    box-shadow: 1px 1px 1px black;
+    
     
 }
 .Title{ 
     display: flex;
     flex-direction: row;
     background-color:cadetblue;
+    box-shadow: 1px 1px 1px black;
 }
 .ProfileImage{
     margin:0;
@@ -36,6 +37,7 @@
     margin:1em;
     margin-top:0;
     background-color: aliceblue;
+    box-shadow: 1px 1px 1px black;
 }
 .Posts{
     list-style: none;
