@@ -5,7 +5,7 @@
 }
 .SearchBar {
     border: 1px solid red;
-
+    size: 80
 }
 .Label {
     font-weight: bold;
