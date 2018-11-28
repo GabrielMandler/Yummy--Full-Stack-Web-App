@@ -16,11 +16,8 @@ ul{
     padding: 0;
 }
 .usersList{
-    display:flex;
-    align-items: center;
-    justify-content:center;
-    flex-direction: column;
-    width: 100%;
+
+    width: 80%;
 }
 h1{
     color:white;
