@@ -21,7 +21,8 @@ class Search extends Component{
                     type: 'text',
                     placeholder: 'enter user name'
                 },
-                value: 'Start typing..',
+                placeholder: 'Start typing..',
+                value: null,
                 validation: {
                     required: true
                 },
@@ -39,6 +40,7 @@ class Search extends Component{
     }
 
     inputChangedHandler = (event) => {
+        this.setState({ searchForm:{ input: event.target.value } })
         this.props.searchUsers(this.props.token, event.target.value, this.props.userId);
     }
 
@@ -75,12 +77,13 @@ class Search extends Component{
                 <h3> Search for new friends! </h3>
                 <form>
                     <Input 
-                        elementType={this.state.searchForm.elementType} 
-                        elementConfig={this.state.searchForm.elementConfig} 
-                        value={this.state.searchForm.value} 
-                        invalid={!this.state.searchForm.valid}
-                        shouldValidate={this.state.searchForm.validation}
-                        touched={this.state.searchForm.touched}
+                        elementType={this.state.searchForm.input.elementType} 
+                        elementConfig={this.state.searchForm.input.elementConfig} 
+                        value={this.state.searchForm.input.value} 
+                        placeholder={this.state.searchForm.input.placeholder}
+                        invalid={!this.state.searchForm.input.valid}
+                        shouldValidate={this.state.searchForm.input.validation}
+                        touched={this.state.searchForm.input.touched}
                         changed={(event) => this.inputChangedHandler(event)
                         }
                         />
