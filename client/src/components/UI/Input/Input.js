@@ -6,7 +6,7 @@ const input = ( props ) => {
     let inputElement = null;
     let inputClasses = [classes.InputElement];
 
-    if (props.invalid && props.shouldValidate && props.touched) {
+    if (props.invalid && props.shouldValidate) {
         inputClasses.push(classes.Invalid);
     }
 
@@ -19,11 +19,12 @@ const input = ( props ) => {
                 onChange={props.changed} />;
             break;
         case ( 'searchBar' ):
-            inputClasses = [classes.SearchBar]
+            inputClasses = [classes.SearchBar];
             inputElement = <input
                 className={inputClasses.join(' ')}
                 {...props.elementConfig}
                 value={props.value}
+                placeholder={props.placeholder} 
                 onChange={props.changed} />;
             break;
         case ( 'textarea' ):

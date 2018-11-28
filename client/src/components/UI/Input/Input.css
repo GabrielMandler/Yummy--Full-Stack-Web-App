@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 .SearchBar {
-    border: 1px solid red;
-    size: 80
+    width: 100%;
+    height: 30px;
 }
 .Label {
     font-weight: bold;
