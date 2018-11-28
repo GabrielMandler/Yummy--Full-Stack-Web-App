@@ -75,7 +75,6 @@ class Search extends Component{
         return (
             <Aux> 
                 <h3> Search for new friends! </h3>
-                <form>
                     <Input 
                         elementType={this.state.searchForm.input.elementType} 
                         elementConfig={this.state.searchForm.input.elementConfig} 
@@ -90,7 +89,6 @@ class Search extends Component{
                         {usersList}
                         {errorMessage}
                         {spinner}
-                </ form>
             </Aux>
         )
     }
