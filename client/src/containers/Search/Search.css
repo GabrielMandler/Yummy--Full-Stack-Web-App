@@ -11,10 +11,12 @@
 ul{
     list-style-type: none;
     margin: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
     padding: 0;
 }
 .usersList{
-    width: 90%;
+    width: 100%;
 }
 h1{
     color:white;
