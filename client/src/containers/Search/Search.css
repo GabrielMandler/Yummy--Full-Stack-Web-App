@@ -13,6 +13,9 @@ ul{
     margin: 10px;
     padding: 0;
 }
+.usersList{
+    width: 100%;
+}
 h1{
     color:white;
 }

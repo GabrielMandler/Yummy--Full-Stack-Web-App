@@ -61,6 +61,7 @@ var UserSchema = new mongoose.Schema({
 }, { autoIndex: false });
 
 UserSchema.statics.getUsers = function(searchInput, userId){
+  searchInput = searchInput.toLowerCase();
   return User.find({ username: {$regex : "^" + searchInput}, '_id': {$ne: userId} })
             .then((user) => {
               return user;
