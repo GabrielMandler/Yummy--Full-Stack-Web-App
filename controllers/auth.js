@@ -21,7 +21,7 @@ exports.login = (req, res) => {
   
 exports.register = (req, res) => {
   var body = _.pick(req.body, ['email', 'password', 'gender']);
-  body.profileImage = 'https://storage.cloud.google.com/staging.webproject-cd3b2.appspot.com/assets/user.png';
+  body.profileImage = 'https://storage.cloud.google.com/yummyapp/assets/user.png';
   var user = new User(body);
   user.username = user._id;
   user.bio = user._id;
