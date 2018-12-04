@@ -2,10 +2,10 @@
 const {Storage} = require('@google-cloud/storage');
 
 var storage = new Storage({
-    projectId: 'webproject-cd3b2'
+    projectId: 'yummyapp-224514'
 });
 var FOLDER_PREFIX = 'users/';
-var BUCKET_NAME = 'staging.webproject-cd3b2.appspot.com';
+var BUCKET_NAME = 'yummyapp';
 
 // Reference an existing bucket.
 var bucket = storage.bucket(BUCKET_NAME);
